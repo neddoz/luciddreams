@@ -13,8 +13,8 @@ class LDNavigationBar: UINavigationBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.tintColor   = UIColor.navigationBarColor()
-        self.translucent = false;
+        self.barTintColor = UIColor.navigationBarColor()
+        self.translucent  = false;
                 
     }
     

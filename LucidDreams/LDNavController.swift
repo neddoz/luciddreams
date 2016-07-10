@@ -9,16 +9,12 @@
 import UIKit
 
 class LDNavController: UINavigationController {
-    
-    var navBarHairlineImageView: UIImageView!
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
     
         self.setValue(LDNavigationBar(), forKey: "navigationBar")
-        
-        self.navBarHairlineImageView = findHairlineImageViewUnder(self.navigationBar);
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,39 +35,9 @@ class LDNavController: UINavigationController {
         self.navigationBar.addSubview(separator)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
-        super.viewWillAppear(animated)
-        
-        self.navBarHairlineImageView.hidden = true;
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        
-        self.navBarHairlineImageView.hidden = false;
-    }
-    
-    func findHairlineImageViewUnder(view: UIView) -> UIImageView? {
-        
-        if view.isKindOfClass(UIImageView) && view.height <= 1.0 {
-            
-            return view as? UIImageView
-            
-        }
-        
-        for subview in view.subviews {
-            
-            let imageView: UIImageView? = findHairlineImageViewUnder(subview);
-            
-            if (imageView != nil) {
-                
-                return imageView!;
-            }
-        }
-        
-        return nil;
+        return UIStatusBarStyle.LightContent
     }
 
 }
