@@ -19,6 +19,7 @@
 		E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */; };
 		E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */; };
 		E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */; };
+		E552204F1D32F86100DB22CC /* LDSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+LDAdditions.swift"; sourceTree = "<group>"; };
 		E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
 		E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchViewController.swift; sourceTree = "<group>"; };
+		E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E55220421D32C9BA00DB22CC /* LDNavigationController.swift */,
+				E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */,
 				E55220401D32BE3600DB22CC /* LDViewController.swift */,
 			);
 			name = Base;
@@ -353,6 +356,7 @@
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
+				E552204F1D32F86100DB22CC /* LDSearchNavigationController.swift in Sources */,
 				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
 			);

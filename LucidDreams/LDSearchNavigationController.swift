@@ -1,5 +1,5 @@
 //
-//  LDSearchViewController.swift
+//  LDSearchNavigationController.swift
 //  LucidDreams
 //
 //  Created by Pablo on 7/10/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LDSearchViewController: LDViewController {
+class LDSearchNavigationController: LDNavigationController {
 
     override func viewDidLoad() {
         
@@ -18,11 +18,6 @@ class LDSearchViewController: LDViewController {
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func dimiss(sender: AnyObject) {
-        
-        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

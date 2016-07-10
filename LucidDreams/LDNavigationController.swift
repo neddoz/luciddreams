@@ -9,6 +9,8 @@
 import UIKit
 
 class LDNavigationController: UINavigationController {
+    
+    let separator = UIView()
 
     override func viewDidLoad() {
         
@@ -26,11 +28,14 @@ class LDNavigationController: UINavigationController {
         
         super.viewDidLayoutSubviews()
         
+//        let titleView = UIImageView(frame: CGRectMake(0.0, 0.0, 35.0, 26.79))
+//        titleView.backgroundColor = UIColor.redColor()
+//        
+//        self.navigationItem.titleView = titleView
+        
         let separatorHeight: CGFloat = 2.0
         
-        let separator             = UIView()
-        separator.frame           = CGRectMake(0.0, self.navigationBar.height - separatorHeight, self.navigationBar.width, separatorHeight)
-        separator.backgroundColor = UIColor.greenGiphyColor()
+        separator.frame = CGRectMake(0.0, self.navigationBar.height - separatorHeight, self.navigationBar.width, separatorHeight)
         
         self.navigationBar.addSubview(separator)
     }
@@ -38,6 +43,14 @@ class LDNavigationController: UINavigationController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
         return UIStatusBarStyle.LightContent
+    }
+    
+    @IBInspectable var separatorColor: UIColor? {
+        
+        didSet {
+            
+            separator.backgroundColor = separatorColor
+        }
     }
 
 }

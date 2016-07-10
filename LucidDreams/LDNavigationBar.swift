@@ -15,7 +15,6 @@ class LDNavigationBar: UINavigationBar {
         super.init(frame: frame)
         
         self.barTintColor = UIColor.navigationBarColor()
-        self.tintColor    = UIColor.greenGiphyColor()
         self.translucent  = false;
                 
     }
