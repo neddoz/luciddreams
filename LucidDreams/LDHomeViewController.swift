@@ -11,15 +11,24 @@ import UIKit
 class LDHomeViewController: LDViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search-icon"),
+                                                                 style: .Plain,
+                                                                 target: self,
+                                                                 action: #selector(showSearch))
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func showSearch(sender: AnyObject) {
+        
+        
+    }
 
 }
 

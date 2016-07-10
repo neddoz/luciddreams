@@ -14,10 +14,11 @@
 		E55220271D32BDA800DB22CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55220261D32BDA800DB22CC /* Assets.xcassets */; };
 		E552202A1D32BDA800DB22CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55220281D32BDA800DB22CC /* LaunchScreen.storyboard */; };
 		E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220401D32BE3600DB22CC /* LDViewController.swift */; };
-		E55220431D32C9BA00DB22CC /* LDNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220421D32C9BA00DB22CC /* LDNavController.swift */; };
+		E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220421D32C9BA00DB22CC /* LDNavigationController.swift */; };
 		E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220441D32C9E200DB22CC /* LDNavigationBar.swift */; };
 		E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */; };
 		E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */; };
+		E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +33,11 @@
 		E55220291D32BDA800DB22CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E552202B1D32BDA800DB22CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E55220401D32BE3600DB22CC /* LDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDViewController.swift; sourceTree = "<group>"; };
-		E55220421D32C9BA00DB22CC /* LDNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNavController.swift; sourceTree = "<group>"; };
+		E55220421D32C9BA00DB22CC /* LDNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNavigationController.swift; sourceTree = "<group>"; };
 		E55220441D32C9E200DB22CC /* LDNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNavigationBar.swift; sourceTree = "<group>"; };
 		E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+LDAdditions.swift"; sourceTree = "<group>"; };
 		E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
+		E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				E552203E1D32BE0900DB22CC /* Base */,
 				E552203F1D32BE0E00DB22CC /* Cells */,
 				E55220211D32BDA800DB22CC /* LDHomeViewController.swift */,
+				E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 		E552203E1D32BE0900DB22CC /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E55220421D32C9BA00DB22CC /* LDNavController.swift */,
+				E55220421D32C9BA00DB22CC /* LDNavigationController.swift */,
 				E55220401D32BE3600DB22CC /* LDViewController.swift */,
 			);
 			name = Base;
@@ -346,8 +349,9 @@
 			files = (
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
 				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
-				E55220431D32C9BA00DB22CC /* LDNavController.swift in Sources */,
+				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
+				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
 				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,

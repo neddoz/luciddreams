@@ -17,17 +17,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gds-tg-yZF"/>
+                    <navigationItem key="navigationItem" id="Gds-tg-yZF">
+                        <barButtonItem key="rightBarButtonItem" image="search-icon" style="plain" id="iv4-c7-M0J"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1303" y="448"/>
         </scene>
-        <!--Nav Controller-->
+        <!--Search View Controller-->
+        <scene sceneID="KN7-tl-Ldi">
+            <objects>
+                <viewController id="E7a-FO-heV" customClass="LDSearchViewController" customModule="Lucid_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RVM-Lc-hap"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Vg-G8-2Ag"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tKW-xz-22a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gw4-ur-x5T"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAp-5S-iWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2688" y="448"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="9mV-aj-86C">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixi-sI-gfg" customClass="LDNavController" customModule="Lucid_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixi-sI-gfg" customClass="LDNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M8y-4I-2Fs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -42,5 +64,26 @@
             </objects>
             <point key="canvasLocation" x="607" y="448"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sfm-s3-QzW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yti-Sm-A8J" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kcA-zq-TEs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E7a-FO-heV" kind="relationship" relationship="rootViewController" id="TD6-hY-b13"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fT3-At-j9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="448"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="search-icon" width="20" height="20"/>
+    </resources>
 </document>

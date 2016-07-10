@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LDNavController: UINavigationController {
+class LDNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         
