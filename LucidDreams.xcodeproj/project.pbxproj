@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06D8F7DBBB83E5E78BAFFD09 /* Pods_LucidDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */; };
+		E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */; };
+		E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220211D32BDA800DB22CC /* LDHomeViewController.swift */; };
+		E55220251D32BDA800DB22CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55220231D32BDA800DB22CC /* Main.storyboard */; };
+		E55220271D32BDA800DB22CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55220261D32BDA800DB22CC /* Assets.xcassets */; };
+		E552202A1D32BDA800DB22CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55220281D32BDA800DB22CC /* LaunchScreen.storyboard */; };
+		E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220401D32BE3600DB22CC /* LDViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LucidDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		667496165D9B6A1DE7AE053B /* Pods-LucidDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.debug.xcconfig"; sourceTree = "<group>"; };
+		81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.release.xcconfig"; sourceTree = "<group>"; };
+		E552201C1D32BDA700DB22CC /* LucidDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LucidDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDAppDelegate.swift; sourceTree = "<group>"; };
+		E55220211D32BDA800DB22CC /* LDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDHomeViewController.swift; sourceTree = "<group>"; };
+		E55220241D32BDA800DB22CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E55220261D32BDA800DB22CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E55220291D32BDA800DB22CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E552202B1D32BDA800DB22CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E55220401D32BE3600DB22CC /* LDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E55220191D32BDA700DB22CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D8F7DBBB83E5E78BAFFD09 /* Pods_LucidDreams.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D68457672FD4AEE5C57A35B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E55220131D32BDA700DB22CC = {
+			isa = PBXGroup;
+			children = (
+				E552201E1D32BDA800DB22CC /* LucidDreams */,
+				E552201D1D32BDA700DB22CC /* Products */,
+				FD64A87878B61C5EAC4E6FFD /* Pods */,
+				2D68457672FD4AEE5C57A35B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E552201D1D32BDA700DB22CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E552201C1D32BDA700DB22CC /* LucidDreams.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E552201E1D32BDA800DB22CC /* LucidDreams */ = {
+			isa = PBXGroup;
+			children = (
+				E552203D1D32BDD600DB22CC /* Categories */,
+				E552203C1D32BDD500DB22CC /* Components */,
+				E552203B1D32BDD300DB22CC /* Constants */,
+				E552203A1D32BDD200DB22CC /* Controllers */,
+				E55220391D32BDD000DB22CC /* Data */,
+				E55220381D32BDCF00DB22CC /* Helpers */,
+				E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */,
+				E55220371D32BDCE00DB22CC /* Models */,
+				E55220361D32BDCC00DB22CC /* Networking */,
+				E55220351D32BDC900DB22CC /* Protocols */,
+				E55220331D32BDB900DB22CC /* Resources */,
+				E55220321D32BDB800DB22CC /* View Controllers */,
+				E55220311D32BDB500DB22CC /* Views */,
+			);
+			path = LucidDreams;
+			sourceTree = "<group>";
+		};
+		E55220311D32BDB500DB22CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E55220281D32BDA800DB22CC /* LaunchScreen.storyboard */,
+				E55220231D32BDA800DB22CC /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E55220321D32BDB800DB22CC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E552203E1D32BE0900DB22CC /* Base */,
+				E552203F1D32BE0E00DB22CC /* Cells */,
+				E55220211D32BDA800DB22CC /* LDHomeViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E55220331D32BDB900DB22CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E55220261D32BDA800DB22CC /* Assets.xcassets */,
+				E552202B1D32BDA800DB22CC /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E55220351D32BDC900DB22CC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		E55220361D32BDCC00DB22CC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		E55220371D32BDCE00DB22CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E55220381D32BDCF00DB22CC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E55220391D32BDD000DB22CC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		E552203A1D32BDD200DB22CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E552203B1D32BDD300DB22CC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		E552203C1D32BDD500DB22CC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		E552203D1D32BDD600DB22CC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		E552203E1D32BE0900DB22CC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E55220401D32BE3600DB22CC /* LDViewController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E552203F1D32BE0E00DB22CC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		FD64A87878B61C5EAC4E6FFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				667496165D9B6A1DE7AE053B /* Pods-LucidDreams.debug.xcconfig */,
+				81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E552201B1D32BDA700DB22CC /* LucidDreams */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E552202E1D32BDA800DB22CC /* Build configuration list for PBXNativeTarget "LucidDreams" */;
+			buildPhases = (
+				504432ECD13ECD26E09CB962 /* [CP] Check Pods Manifest.lock */,
+				E55220181D32BDA700DB22CC /* Sources */,
+				E55220191D32BDA700DB22CC /* Frameworks */,
+				E552201A1D32BDA700DB22CC /* Resources */,
+				910FEDC543620994BDDFA938 /* [CP] Embed Pods Frameworks */,
+				75943010894F4EBA7038488F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LucidDreams;
+			productName = LucidDreams;
+			productReference = E552201C1D32BDA700DB22CC /* LucidDreams.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E55220141D32BDA700DB22CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					E552201B1D32BDA700DB22CC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E55220171D32BDA700DB22CC /* Build configuration list for PBXProject "LucidDreams" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E55220131D32BDA700DB22CC;
+			productRefGroup = E552201D1D32BDA700DB22CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E552201B1D32BDA700DB22CC /* LucidDreams */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E552201A1D32BDA700DB22CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E552202A1D32BDA800DB22CC /* LaunchScreen.storyboard in Resources */,
+				E55220271D32BDA800DB22CC /* Assets.xcassets in Resources */,
+				E55220251D32BDA800DB22CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		504432ECD13ECD26E09CB962 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75943010894F4EBA7038488F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		910FEDC543620994BDDFA938 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E55220181D32BDA700DB22CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
+				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
+				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E55220231D32BDA800DB22CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E55220241D32BDA800DB22CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E55220281D32BDA800DB22CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E55220291D32BDA800DB22CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E552202C1D32BDA800DB22CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E552202D1D32BDA800DB22CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E552202F1D32BDA800DB22CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667496165D9B6A1DE7AE053B /* Pods-LucidDreams.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = LucidDreams/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luciddreams;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E55220301D32BDA800DB22CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = LucidDreams/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luciddreams;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E55220171D32BDA700DB22CC /* Build configuration list for PBXProject "LucidDreams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E552202C1D32BDA800DB22CC /* Debug */,
+				E552202D1D32BDA800DB22CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E552202E1D32BDA800DB22CC /* Build configuration list for PBXNativeTarget "LucidDreams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E552202F1D32BDA800DB22CC /* Debug */,
+				E55220301D32BDA800DB22CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E55220141D32BDA700DB22CC /* Project object */;
+}
