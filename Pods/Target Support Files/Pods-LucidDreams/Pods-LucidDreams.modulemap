@@ -1,6 +1,0 @@
-framework module Pods_LucidDreams {
-  umbrella header "Pods-LucidDreams-umbrella.h"
-
-  export *
-  module * { export * }
-}
