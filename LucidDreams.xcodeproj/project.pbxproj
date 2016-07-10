@@ -14,13 +14,17 @@
 		E55220271D32BDA800DB22CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55220261D32BDA800DB22CC /* Assets.xcassets */; };
 		E552202A1D32BDA800DB22CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55220281D32BDA800DB22CC /* LaunchScreen.storyboard */; };
 		E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220401D32BE3600DB22CC /* LDViewController.swift */; };
+		E55220431D32C9BA00DB22CC /* LDNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220421D32C9BA00DB22CC /* LDNavController.swift */; };
+		E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220441D32C9E200DB22CC /* LDNavigationBar.swift */; };
+		E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */; };
+		E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LucidDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		667496165D9B6A1DE7AE053B /* Pods-LucidDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.debug.xcconfig"; sourceTree = "<group>"; };
 		81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.release.xcconfig"; sourceTree = "<group>"; };
-		E552201C1D32BDA700DB22CC /* LucidDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LucidDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E552201C1D32BDA700DB22CC /* Lucid Dreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lucid Dreams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDAppDelegate.swift; sourceTree = "<group>"; };
 		E55220211D32BDA800DB22CC /* LDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDHomeViewController.swift; sourceTree = "<group>"; };
 		E55220241D32BDA800DB22CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +32,10 @@
 		E55220291D32BDA800DB22CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E552202B1D32BDA800DB22CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E55220401D32BE3600DB22CC /* LDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDViewController.swift; sourceTree = "<group>"; };
+		E55220421D32C9BA00DB22CC /* LDNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNavController.swift; sourceTree = "<group>"; };
+		E55220441D32C9E200DB22CC /* LDNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDNavigationBar.swift; sourceTree = "<group>"; };
+		E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+LDAdditions.swift"; sourceTree = "<group>"; };
+		E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +71,7 @@
 		E552201D1D32BDA700DB22CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E552201C1D32BDA700DB22CC /* LucidDreams.app */,
+				E552201C1D32BDA700DB22CC /* Lucid Dreams.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 		E552203C1D32BDD500DB22CC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E55220441D32C9E200DB22CC /* LDNavigationBar.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -175,6 +184,8 @@
 		E552203D1D32BDD600DB22CC /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */,
+				E55220481D32D3F200DB22CC /* UIView-Positioning */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 		E552203E1D32BE0900DB22CC /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E55220421D32C9BA00DB22CC /* LDNavController.swift */,
 				E55220401D32BE3600DB22CC /* LDViewController.swift */,
 			);
 			name = Base;
@@ -192,6 +204,14 @@
 			children = (
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		E55220481D32D3F200DB22CC /* UIView-Positioning */ = {
+			isa = PBXGroup;
+			children = (
+				E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */,
+			);
+			name = "UIView-Positioning";
 			sourceTree = "<group>";
 		};
 		FD64A87878B61C5EAC4E6FFD /* Pods */ = {
@@ -223,7 +243,7 @@
 			);
 			name = LucidDreams;
 			productName = LucidDreams;
-			productReference = E552201C1D32BDA700DB22CC /* LucidDreams.app */;
+			productReference = E552201C1D32BDA700DB22CC /* Lucid Dreams.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -325,7 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
+				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
+				E55220431D32C9BA00DB22CC /* LDNavController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
+				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
+				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,7 +471,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luciddreams;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Lucid Dreams";
 			};
 			name = Debug;
 		};
@@ -461,7 +485,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.luciddreams;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Lucid Dreams";
 			};
 			name = Release;
 		};
