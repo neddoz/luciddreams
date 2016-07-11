@@ -13,8 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LDFilterControl" customModule="Lucid_Dreams" customModuleProvider="target">
             <connections>
                 <outlet property="markerView" destination="yEL-2h-Np5" id="VOU-Zf-MWO"/>
-                <outlet property="newestLabel" destination="3tg-Mr-dMT" id="tRs-qZ-YrY"/>
-                <outlet property="newestView" destination="4qm-Jr-PsH" id="Hrm-uv-aWK"/>
+                <outlet property="randomLabel" destination="3tg-Mr-dMT" id="N0t-zs-rns"/>
+                <outlet property="randomView" destination="4qm-Jr-PsH" id="Kot-bY-K24"/>
                 <outlet property="trendingLabel" destination="Cae-wd-iGl" id="mbQ-IK-bij"/>
                 <outlet property="trendingView" destination="Hlq-AW-ux2" id="WHD-dZ-qDO"/>
             </connections>
@@ -51,7 +51,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qm-Jr-PsH">
                     <rect key="frame" x="300" y="0.0" width="300" height="45"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWEST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tg-Mr-dMT">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RANDOM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tg-Mr-dMT">
                             <rect key="frame" x="16" y="11" width="110" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="1TK-VL-rN5"/>

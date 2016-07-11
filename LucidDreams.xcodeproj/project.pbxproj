@@ -26,6 +26,8 @@
 		E55220781D334CFA00DB22CC /* LDFilterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220771D334CFA00DB22CC /* LDFilterControl.swift */; };
 		E552207A1D334D8900DB22CC /* LDFilterControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55220791D334D8900DB22CC /* LDFilterControl.xib */; };
 		E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */; };
+		E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFC1D3422300097DEC9 /* LDStartupController.swift */; };
+		E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		E55220771D334CFA00DB22CC /* LDFilterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDFilterControl.swift; sourceTree = "<group>"; };
 		E55220791D334D8900DB22CC /* LDFilterControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDFilterControl.xib; sourceTree = "<group>"; };
 		E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LDAdditions.swift"; sourceTree = "<group>"; };
+		E557DDFC1D3422300097DEC9 /* LDStartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDStartupController.swift; sourceTree = "<group>"; };
+		E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGiphyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		E55220361D32BDCC00DB22CC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 		E552203A1D32BDD200DB22CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E557DDFC1D3422300097DEC9 /* LDStartupController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -195,10 +201,10 @@
 		E552203C1D32BDD500DB22CC /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E55220441D32C9E200DB22CC /* LDNavigationBar.swift */,
-				E55220731D33335000DB22CC /* LDSearchBar.swift */,
 				E55220771D334CFA00DB22CC /* LDFilterControl.swift */,
 				E55220791D334D8900DB22CC /* LDFilterControl.xib */,
+				E55220441D32C9E200DB22CC /* LDNavigationBar.swift */,
+				E55220731D33335000DB22CC /* LDSearchBar.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -397,8 +403,10 @@
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
 				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
 				E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */,
+				E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */,
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
+				E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
 				E55220781D334CFA00DB22CC /* LDFilterControl.swift in Sources */,

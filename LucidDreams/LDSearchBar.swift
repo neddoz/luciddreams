@@ -41,7 +41,6 @@ class LDSearchBar: UITextField {
         super.drawTextInRect(rect)
         
         self.becomeFirstResponder()
-        
     }
     
     override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {

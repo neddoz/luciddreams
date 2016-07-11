@@ -10,17 +10,23 @@ import UIKit
 
 class LDFilterControl: UIView {
     
-    @IBOutlet weak var view:         UIView!
-    @IBOutlet weak var trendingView: UIView!
-    @IBOutlet weak var newestView:   UIView!
+    enum LDFiltering {
+        
+        case LDFilteringTrending
+        case LDFilteringRandom
+    }
     
-    @IBOutlet weak var markerView: UIView!
+    @IBOutlet weak private var view:         UIView!
+    @IBOutlet weak private var trendingView: UIView!
+    @IBOutlet weak private var randomView:   UIView!
     
-    @IBOutlet weak var trendingLabel: UILabel!
-    @IBOutlet weak var newestLabel:   UILabel!
+    @IBOutlet weak private var markerView: UIView!
+    
+    @IBOutlet weak private var trendingLabel: UILabel!
+    @IBOutlet weak private var randomLabel:   UILabel!
     
     let trendingTapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
-    let newestTapGesture:   UITapGestureRecognizer = UITapGestureRecognizer()
+    let randomTapGesture:   UITapGestureRecognizer = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
         
@@ -51,18 +57,18 @@ class LDFilterControl: UIView {
     private func commonInit() {
         
         self.trendingTapGesture.addTarget(self,
-                                          action: #selector(trendingAction))
+                                          action: #selector(trendingAction(_:)))
         
-        self.newestTapGesture.addTarget(self,
-                                          action: #selector(newestAction))
+        self.randomTapGesture.addTarget(self,
+                                        action: #selector(randomAction(_:)))
         
         self.trendingTapGesture.numberOfTapsRequired    = 1
         self.trendingTapGesture.numberOfTouchesRequired = 1
-        self.newestTapGesture.numberOfTapsRequired      = 1
-        self.newestTapGesture.numberOfTouchesRequired   = 1
-    
+        self.randomTapGesture.numberOfTapsRequired      = 1
+        self.randomTapGesture.numberOfTouchesRequired   = 1
+        
         self.trendingView.addGestureRecognizer(self.trendingTapGesture)
-        self.newestView.addGestureRecognizer(self.newestTapGesture)
+        self.randomView.addGestureRecognizer(self.randomTapGesture)
     }
     
     override func drawRect(rect: CGRect) {
@@ -72,14 +78,14 @@ class LDFilterControl: UIView {
         self.markerView.center = self.trendingLabel.center
     }
     
-    func trendingAction(sender: AnyObject? = nil) {
+    @objc private func trendingAction(sender: AnyObject?) {
         
         self.animateControlToOriginX(self.trendingView.x + self.trendingLabel.x);
     }
     
-    func newestAction(sender: AnyObject? = nil) {
+    @objc private func randomAction(sender: AnyObject?) {
         
-        self.animateControlToOriginX(self.newestView.x + self.newestLabel.x);
+        self.animateControlToOriginX(self.randomView.x + self.randomLabel.x);
     }
     
     private func animateControlToOriginX(originX: CGFloat) {
