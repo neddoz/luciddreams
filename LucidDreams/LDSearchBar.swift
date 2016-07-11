@@ -22,7 +22,7 @@ class LDSearchBar: UITextField {
         super.init(coder: aDecoder)
     }
     
-    func commonInit() {
+    private func commonInit() {
         
         self.backgroundColor           = UIColor.clearColor()
         self.contentVerticalAlignment  = .Center;
@@ -41,10 +41,9 @@ class LDSearchBar: UITextField {
         super.drawTextInRect(rect)
         
         self.becomeFirstResponder()
+        
     }
     
-    
-
     override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
         
         if action == #selector(NSObject.copy(_:)) || action == #selector(NSObject.paste(_:)) {

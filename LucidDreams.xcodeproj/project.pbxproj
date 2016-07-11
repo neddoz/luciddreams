@@ -25,6 +25,7 @@
 		E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220731D33335000DB22CC /* LDSearchBar.swift */; };
 		E55220781D334CFA00DB22CC /* LDFilterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220771D334CFA00DB22CC /* LDFilterControl.swift */; };
 		E552207A1D334D8900DB22CC /* LDFilterControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55220791D334D8900DB22CC /* LDFilterControl.xib */; };
+		E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E55220731D33335000DB22CC /* LDSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchBar.swift; sourceTree = "<group>"; };
 		E55220771D334CFA00DB22CC /* LDFilterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDFilterControl.swift; sourceTree = "<group>"; };
 		E55220791D334D8900DB22CC /* LDFilterControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDFilterControl.xib; sourceTree = "<group>"; };
+		E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LDAdditions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			children = (
 				E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */,
 				E55220481D32D3F200DB22CC /* UIView-Positioning */,
+				E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				E552201A1D32BDA700DB22CC /* Resources */,
 				910FEDC543620994BDDFA938 /* [CP] Embed Pods Frameworks */,
 				75943010894F4EBA7038488F /* [CP] Copy Pods Resources */,
+				49F663A416F8A2075D3D2B88 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,6 +327,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		49F663A416F8A2075D3D2B88 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		504432ECD13ECD26E09CB962 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +406,7 @@
 				E55220721D33257C00DB22CC /* LDConstants.swift in Sources */,
 				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
+				E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
