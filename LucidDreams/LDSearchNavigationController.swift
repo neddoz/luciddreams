@@ -38,6 +38,11 @@ class LDSearchNavigationController: LDNavigationController, UITextFieldDelegate 
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
+        if (string as NSString).isEqualToString("\n") {
+            
+            return true
+        }
+        
         textField.text = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string.uppercaseString)
         
         return false

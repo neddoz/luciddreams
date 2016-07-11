@@ -15,7 +15,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gp-L4-8KR" customClass="LDFilterControl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dFS-hd-9K0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6gp-L4-8KR" secondAttribute="trailing" id="RuZ-mR-eIF"/>
+                            <constraint firstItem="6gp-L4-8KR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YqP-RU-YIp"/>
+                            <constraint firstItem="6gp-L4-8KR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cMQ-qP-YpK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gds-tg-yZF">
                         <barButtonItem key="rightBarButtonItem" image="search-icon" style="plain" id="iv4-c7-M0J">
@@ -28,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115" y="448"/>
+            <point key="canvasLocation" x="2121" y="448"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="KN7-tl-Ldi">
