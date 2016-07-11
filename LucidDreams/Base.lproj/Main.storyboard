@@ -61,12 +61,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yti-Sm-A8J" customClass="LDSearchNavigationController" customModule="Lucid_Dreams" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kcA-zq-TEs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kcA-zq-TEs" customClass="LDNavigationBar" customModule="Lucid_Dreams" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.0" green="0.78430998330000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="customTintColor">
+                                <color key="value" red="0.0" green="0.78430998330000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="inspectableTintColor">
+                                <color key="value" red="0.0" green="0.78430998330000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
@@ -87,12 +92,17 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R0l-jS-s6y" customClass="LDNavigationController" customModule="Lucid_Dreams" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bd6-9E-Nol">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bd6-9E-Nol" customClass="LDNavigationBar" customModule="Lucid_Dreams" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.0" green="1" blue="0.57254999880000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="customTintColor">
+                                <color key="value" red="0.0" green="1" blue="0.57254999880000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="inspectableTintColor">
+                                <color key="value" red="0.0" green="1" blue="0.57254999880000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>

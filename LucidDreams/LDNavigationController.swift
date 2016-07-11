@@ -15,8 +15,6 @@ class LDNavigationController: UINavigationController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-    
-        self.setValue(LDNavigationBar(), forKey: "navigationBar")
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,16 +26,16 @@ class LDNavigationController: UINavigationController {
         
         super.viewDidLayoutSubviews()
         
-//        let titleView = UIImageView(frame: CGRectMake(0.0, 0.0, 35.0, 26.79))
-//        titleView.backgroundColor = UIColor.redColor()
-//        
-//        self.navigationItem.titleView = titleView
-        
         let separatorHeight: CGFloat = 2.0
         
         separator.frame = CGRectMake(0.0, self.navigationBar.height - separatorHeight, self.navigationBar.width, separatorHeight)
         
         self.navigationBar.addSubview(separator)
+        
+        let logoImage         = UIImageView(image: UIImage(named: "title-logo"))
+        logoImage.contentMode = .ScaleAspectFit
+        
+        self.navigationBar.topItem?.titleView = logoImage
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

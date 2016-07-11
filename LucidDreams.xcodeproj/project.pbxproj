@@ -20,6 +20,9 @@
 		E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */; };
 		E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */; };
 		E552204F1D32F86100DB22CC /* LDSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */; };
+		E55220701D33255700DB22CC /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E552206F1D33253A00DB22CC /* SF-UI-Display-Black.otf */; };
+		E55220721D33257C00DB22CC /* LDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220711D33257C00DB22CC /* LDConstants.swift */; };
+		E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220731D33335000DB22CC /* LDSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
 		E552204B1D32DA2200DB22CC /* LDSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchViewController.swift; sourceTree = "<group>"; };
 		E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchNavigationController.swift; sourceTree = "<group>"; };
+		E552206F1D33253A00DB22CC /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
+		E55220711D33257C00DB22CC /* LDConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDConstants.swift; sourceTree = "<group>"; };
+		E55220731D33335000DB22CC /* LDSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E55220261D32BDA800DB22CC /* Assets.xcassets */,
+				E552206E1D33243B00DB22CC /* Font */,
 				E552202B1D32BDA800DB22CC /* Info.plist */,
 			);
 			name = Resources;
@@ -174,6 +181,7 @@
 		E552203B1D32BDD300DB22CC /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				E55220711D33257C00DB22CC /* LDConstants.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E55220441D32C9E200DB22CC /* LDNavigationBar.swift */,
+				E55220731D33335000DB22CC /* LDSearchBar.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -218,6 +227,14 @@
 				E55220491D32D3FD00DB22CC /* UIView+Positioning.swift */,
 			);
 			name = "UIView-Positioning";
+			sourceTree = "<group>";
+		};
+		E552206E1D33243B00DB22CC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				E552206F1D33253A00DB22CC /* SF-UI-Display-Black.otf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		FD64A87878B61C5EAC4E6FFD /* Pods */ = {
@@ -289,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55220701D33255700DB22CC /* SF-UI-Display-Black.otf in Resources */,
 				E552202A1D32BDA800DB22CC /* LaunchScreen.storyboard in Resources */,
 				E55220271D32BDA800DB22CC /* Assets.xcassets in Resources */,
 				E55220251D32BDA800DB22CC /* Main.storyboard in Resources */,
@@ -352,11 +370,13 @@
 			files = (
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
 				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
+				E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */,
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
 				E552204F1D32F86100DB22CC /* LDSearchNavigationController.swift in Sources */,
+				E55220721D33257C00DB22CC /* LDConstants.swift in Sources */,
 				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
 			);

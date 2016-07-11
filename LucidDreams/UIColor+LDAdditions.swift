@@ -25,5 +25,10 @@ extension UIColor {
         
         return UIColor(red:0, green:0.78, blue:1, alpha:1)
     }
+    
+    class func yellowGiphyColor() -> UIColor {
+        
+        return UIColor(red:1, green:0.96, blue:0.28, alpha:1)
+    }
 }
 

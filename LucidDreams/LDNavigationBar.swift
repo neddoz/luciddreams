@@ -9,19 +9,20 @@
 import UIKit
 
 class LDNavigationBar: UINavigationBar {
-
-    override init(frame: CGRect) {
-        
-        super.init(frame: frame)
-        
-        self.barTintColor = UIColor.navigationBarColor()
-        self.translucent  = false;
-                
-    }
     
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)!
+        
+        self.barTintColor = UIColor.navigationBarColor()
+        self.translucent  = false;
+    }
+    
+    @IBInspectable var inspectableTintColor: UIColor? {
+        
+        didSet {
+            self.tintColor = inspectableTintColor
+        }
     }
 
 }
