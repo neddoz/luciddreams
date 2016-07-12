@@ -28,6 +28,8 @@
 		E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */; };
 		E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFC1D3422300097DEC9 /* LDStartupController.swift */; };
 		E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */; };
+		E557DE081D353F310097DEC9 /* LDServerObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */; };
+		E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE091D3541770097DEC9 /* LDGIF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LDAdditions.swift"; sourceTree = "<group>"; };
 		E557DDFC1D3422300097DEC9 /* LDStartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDStartupController.swift; sourceTree = "<group>"; };
 		E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGiphyAPI.swift; sourceTree = "<group>"; };
+		E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDServerObjectProtocol.swift; sourceTree = "<group>"; };
+		E557DE091D3541770097DEC9 /* LDGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGIF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		E55220351D32BDC900DB22CC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		E55220371D32BDCE00DB22CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E557DE091D3541770097DEC9 /* LDGIF.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -402,11 +408,13 @@
 			files = (
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
 				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
+				E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */,
 				E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */,
 				E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */,
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
 				E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */,
+				E557DE081D353F310097DEC9 /* LDServerObjectProtocol.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
 				E55220781D334CFA00DB22CC /* LDFilterControl.swift in Sources */,

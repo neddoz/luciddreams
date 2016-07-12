@@ -44,6 +44,15 @@ class LDFilterControl: UIView {
         commonInit()
     }
     
+    override func drawRect(rect: CGRect) {
+        
+        super.drawRect(rect)
+        
+        self.markerView.center = self.trendingLabel.center
+    }
+    
+    // MARK: - Private Methods
+    
     private func nibSetup() {
         
         view                                           = loadViewFromNib()
@@ -57,10 +66,10 @@ class LDFilterControl: UIView {
     private func commonInit() {
         
         self.trendingTapGesture.addTarget(self,
-                                          action: #selector(trendingAction(_:)))
+                                          action: #selector(trendingAction))
         
         self.randomTapGesture.addTarget(self,
-                                        action: #selector(randomAction(_:)))
+                                        action: #selector(randomAction))
         
         self.trendingTapGesture.numberOfTapsRequired    = 1
         self.trendingTapGesture.numberOfTouchesRequired = 1
@@ -71,12 +80,16 @@ class LDFilterControl: UIView {
         self.randomView.addGestureRecognizer(self.randomTapGesture)
     }
     
-    override func drawRect(rect: CGRect) {
+    private func animateControlToOriginX(originX: CGFloat) {
         
-        super.drawRect(rect)
-        
-        self.markerView.center = self.trendingLabel.center
+        UIView.animateWithDuration(0.17) {
+            
+            self.markerView.x = originX;
+            
+        }
     }
+    
+    // MARK: - Action Methods
     
     @objc private func trendingAction(sender: AnyObject?) {
         
@@ -86,15 +99,6 @@ class LDFilterControl: UIView {
     @objc private func randomAction(sender: AnyObject?) {
         
         self.animateControlToOriginX(self.randomView.x + self.randomLabel.x);
-    }
-    
-    private func animateControlToOriginX(originX: CGFloat) {
-        
-        UIView.animateWithDuration(0.17) {
-            
-            self.markerView.x = originX;
-            
-        }
     }
     
 }

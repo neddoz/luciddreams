@@ -8,4 +8,6 @@ target 'LucidDreams' do
   pod 'Alamofire', '~> 3.4'
   pod 'CocoaLumberjack/Swift'
   pod 'Moya', '~> 6.5'
+  pod 'SwiftyJSON', '~> 2.3'
+  pod 'Moya-SwiftyJSONMapper', '~> 1.0'
 end

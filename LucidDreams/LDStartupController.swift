@@ -52,13 +52,11 @@ class LDStartupController: NSObject {
                                                         backgroundColor: nil,
                                                         forFlag: .Verbose)
         
-        #if DEBUG
-            DDLogVerbose("Verbose");
-            DDLogDebug("Debug");
-            DDLogInfo("Info");
-            DDLogWarn("Warn");
-            DDLogError("Error");
-        #endif
+        DDLogVerbose("Verbose");
+        DDLogDebug("Debug");
+        DDLogInfo("Info");
+        DDLogWarn("Warn");
+        DDLogError("Error");
         
     }
     

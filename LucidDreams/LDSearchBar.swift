@@ -22,6 +22,25 @@ class LDSearchBar: UITextField {
         super.init(coder: aDecoder)
     }
     
+    override func drawRect(rect: CGRect) {
+        
+        super.drawTextInRect(rect)
+        
+        self.becomeFirstResponder()
+    }
+    
+        override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+        
+        if action == #selector(NSObject.copy(_:)) || action == #selector(NSObject.paste(_:)) {
+            
+            return false;
+        }
+        
+        return super.canPerformAction(action, withSender: sender)
+    }
+    
+    // MARK: - Action Methods
+    
     private func commonInit() {
         
         self.backgroundColor           = UIColor.clearColor()
@@ -34,23 +53,6 @@ class LDSearchBar: UITextField {
         self.textColor                 = UIColor.whiteColor()
         self.keyboardAppearance        = .Dark
         self.returnKeyType             = .Search
-    }
-    
-    override func drawRect(rect: CGRect) {
-        
-        super.drawTextInRect(rect)
-        
-        self.becomeFirstResponder()
-    }
-    
-    override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-        
-        if action == #selector(NSObject.copy(_:)) || action == #selector(NSObject.paste(_:)) {
-            
-            return false;
-        }
-        
-        return super.canPerformAction(action, withSender: sender)
     }
     
 }

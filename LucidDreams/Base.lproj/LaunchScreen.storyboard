@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -17,16 +17,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZTX-Y1-JSD">
-                                <rect key="frame" x="213" y="192" width="174" height="168"/>
+                                <rect key="frame" x="234" y="193" width="133" height="158"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="168" id="Kng-oC-wTE"/>
-                                    <constraint firstAttribute="width" constant="174" id="Vka-HN-AdZ"/>
+                                    <constraint firstAttribute="height" constant="158" id="Kng-oC-wTE"/>
+                                    <constraint firstAttribute="width" constant="133" id="Vka-HN-AdZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-name" translatesAutoresizingMaskIntoConstraints="NO" id="URp-cr-jpc">
+                                <rect key="frame" x="210" y="551" width="181" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="7Nh-8f-IgC"/>
+                                    <constraint firstAttribute="height" constant="29" id="Kte-Dc-vLO"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12548999490000001" green="0.12548999490000001" blue="0.12548999490000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ZTX-Y1-JSD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-24" id="cdI-Fj-zy3"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="URp-cr-jpc" secondAttribute="bottom" constant="20" id="Ag2-dO-0Qu"/>
+                            <constraint firstItem="URp-cr-jpc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RHA-QL-ngX"/>
+                            <constraint firstItem="ZTX-Y1-JSD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-28" id="cdI-Fj-zy3"/>
                             <constraint firstItem="ZTX-Y1-JSD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qDM-f5-HzQ"/>
                         </constraints>
                     </view>
@@ -38,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-logo" width="173" height="164"/>
+        <image name="launch-logo" width="133" height="158"/>
+        <image name="launch-name" width="180" height="19"/>
     </resources>
 </document>

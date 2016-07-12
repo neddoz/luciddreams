@@ -17,7 +17,7 @@ struct LDConstants {
         static let kLDApiVersion  = "v1";
         static let kLDApiPrefix   = "api";
         
-        static let kLDBaseURL     = "\(kLDApiProtocol)://\(kLDApiPrefix).\(kLDApiDomain)/\(kLDApiVersion)/gifs"
+        static let kLDBaseURL     = "\(kLDApiProtocol)://\(kLDApiPrefix).\(kLDApiDomain)/\(kLDApiVersion)"
     }
     
     struct Fonts {
