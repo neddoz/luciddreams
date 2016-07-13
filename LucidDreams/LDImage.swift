@@ -12,35 +12,32 @@ import Moya_SwiftyJSONMapper
 
 class LDImage: ALSwiftyJSONAble {
     
-    var data: [String: AnyObject]?
+    var url:    NSURL
+    var width:  NSNumber
+    var height: NSNumber
     
     required init?(jsonData:JSON) {
         
-        if let data = jsonData["fixed_height_downsampled"].dictionaryObject {
+        if let url = jsonData["url"].URL {
             
-            self.data = data
-            
-            print(data)
+            self.url = url
         } else {
             return nil
         }
         
-//        if let data = jsonData["data"].array {
-//            
-//            for gifData in data {
-//                
-//                self.data.append(LDGIF(jsonData: gifData)!)
-//            }
-//        } else {
-//            return nil
-//        }
-//        
-//        if let pagination = jsonData["pagination"].dictionaryObject {
-//            
-//            self.pagination = pagination
-//        } else {
-//            return nil
-//        }
+        if let width = jsonData["width"].string {
+            
+            self.width = Int(width)!
+        } else {
+            return nil
+        }
+        
+        if let height = jsonData["height"].string {
+            
+            self.height = Int(height)!
+        } else {
+            return nil
+        }
         
     }
     

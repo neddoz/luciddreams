@@ -13,7 +13,7 @@ class LDGIF: ALSwiftyJSONAble {
     
     var gifId:            String
     var slug:             String
-    var trendingDatetime: NSDate
+    var trendingDatetime: NSDate?
     var image:            LDImage?
     
     required init?(jsonData: JSON) {
@@ -32,18 +32,23 @@ class LDGIF: ALSwiftyJSONAble {
             return nil
         }
         
-        if jsonData["trending_datetime"].string != nil {
+        if let trendingDate = jsonData["trending_datetime"].string {
             
-            self.trendingDatetime = NSDate()
+            let dateFormatter        = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            self.trendingDatetime = dateFormatter.dateFromString(trendingDate)!
+            
+            print(self.trendingDatetime)
         } else {
             return nil
         }
-        
-        if let imageData: Array<JSON> = jsonData["images"].arrayValue {
+
+        if let imageData = jsonData["images"].dictionary {
             
-            for item in imageData {
-        
-                self.image = LDImage(jsonData: item)
+            if let data: AnyObject = imageData["fixed_width_downsampled"]!.rawValue {
+                
+                self.image = LDImage(jsonData: JSON.init(rawValue: data)!)
             }
         } else {
             return nil
