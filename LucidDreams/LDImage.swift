@@ -18,9 +18,9 @@ class LDImage: ALSwiftyJSONAble {
     
     required init?(jsonData:JSON) {
         
-        if let url = jsonData["url"].URL {
+        if let url = jsonData["url"].string {
             
-            self.url = url
+            self.url = NSURL(string: url)!
         } else {
             return nil
         }

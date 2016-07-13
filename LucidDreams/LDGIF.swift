@@ -37,16 +37,14 @@ class LDGIF: ALSwiftyJSONAble {
             let dateFormatter        = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             
-            self.trendingDatetime = dateFormatter.dateFromString(trendingDate)!
-            
-            print(self.trendingDatetime)
+            self.trendingDatetime = NSDate() // dateFormatter.dateFromString(trendingDate)!
         } else {
             return nil
         }
 
         if let imageData = jsonData["images"].dictionary {
             
-            if let data: AnyObject = imageData["fixed_width_downsampled"]!.rawValue {
+            if let data: AnyObject = imageData["fixed_height_downsampled"]!.rawValue {
                 
                 self.image = LDImage(jsonData: JSON.init(rawValue: data)!)
             }

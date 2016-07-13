@@ -10,4 +10,6 @@ target 'LucidDreams' do
   pod 'Moya', '~> 6.5'
   pod 'SwiftyJSON', '~> 2.3'
   pod 'Moya-SwiftyJSONMapper', '~> 1.0'
+  pod 'SDWebImage', '~> 3.8'
+  pod 'SDWebImage/WebP'
 end

@@ -12,8 +12,8 @@ import Moya_SwiftyJSONMapper
 
 class LDResponse: ALSwiftyJSONAble {
     
-    var data:       Array<LDGIF> = []
-    var pagination: [String: AnyObject]?
+    var GIFs:       Array<LDGIF> = []
+    var pagination: LDPaginator?
     
     required init?(jsonData:JSON) {
         
@@ -21,15 +21,16 @@ class LDResponse: ALSwiftyJSONAble {
             
             for gifData in data {
                 
-                self.data.append(LDGIF(jsonData: gifData)!)
+                self.GIFs.append(LDGIF(jsonData: gifData)!)
             }
         } else {
             return nil
         }
         
-        if let pagination = jsonData["pagination"].dictionaryObject {
+        
+        if let paginationData: AnyObject = jsonData["pagination"].rawValue {
             
-            self.pagination = pagination
+            self.pagination = LDPaginator(jsonData: JSON.init(rawValue: paginationData)!)
         } else {
             return nil
         }

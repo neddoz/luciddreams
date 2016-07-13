@@ -23,12 +23,24 @@
                                     <constraint firstAttribute="height" constant="45" id="dFS-hd-9K0"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YNl-Hn-q2E">
+                                <rect key="frame" x="0.0" y="109" width="600" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wPW-gH-xXN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Q16-4h-JKF"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="YNl-Hn-q2E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6OV-fK-8lh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YNl-Hn-q2E" secondAttribute="bottom" id="Cx9-Gh-9r9"/>
                             <constraint firstAttribute="trailing" secondItem="6gp-L4-8KR" secondAttribute="trailing" id="RuZ-mR-eIF"/>
+                            <constraint firstItem="YNl-Hn-q2E" firstAttribute="top" secondItem="6gp-L4-8KR" secondAttribute="bottom" id="WYh-M9-uOv"/>
                             <constraint firstItem="6gp-L4-8KR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YqP-RU-YIp"/>
                             <constraint firstItem="6gp-L4-8KR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cMQ-qP-YpK"/>
+                            <constraint firstItem="YNl-Hn-q2E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yAP-8J-UGQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gds-tg-yZF">
@@ -39,6 +51,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="tableView" destination="YNl-Hn-q2E" id="Jxh-nH-VoD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
