@@ -12,9 +12,18 @@ import Moya_SwiftyJSONMapper
 
 class LDImage: ALSwiftyJSONAble {
     
-
+    var data: [String: AnyObject]?
     
     required init?(jsonData:JSON) {
+        
+        if let data = jsonData["fixed_height_downsampled"].dictionaryObject {
+            
+            self.data = data
+            
+            print(data)
+        } else {
+            return nil
+        }
         
 //        if let data = jsonData["data"].array {
 //            

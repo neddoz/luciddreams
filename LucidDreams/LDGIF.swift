@@ -39,15 +39,11 @@ class LDGIF: ALSwiftyJSONAble {
             return nil
         }
         
-        if let imageData: Array<JSON> = jsonData["images"].array {
+        if let imageData: Array<JSON> = jsonData["images"].arrayValue {
             
             for item in imageData {
         
-//                if let data = item["fixed_height_downsampled"].dictionary {
-//                
-                    print(item)
-//                    self.image = LDImage(jsonData: JSON(data))
-//                }
+                self.image = LDImage(jsonData: item)
             }
         } else {
             return nil
