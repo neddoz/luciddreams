@@ -12,8 +12,6 @@ import CocoaLumberjack
 
 class LDHomeViewController: LDViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    @IBOutlet weak private var tableView: UITableView!
-    
     private var arrayGIFs: Array<LDGIF> = []
     
     override func viewDidLoad() {

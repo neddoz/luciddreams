@@ -17,13 +17,13 @@ class LDGIFCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        self.backgroundColor = UIColor.clearColor()
+        self.gifImageView.backgroundColor = randomPlaceholderColor()
+        self.backgroundColor              = UIColor.clearColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         
         super.setSelected(selected, animated: animated)
-
     }
     
     override func prepareForReuse() {
@@ -34,30 +34,46 @@ class LDGIFCell: UITableViewCell {
         
         gifImageView.sd_cancelCurrentImageLoad()
     }
-    
+
     // MARK: - Public Methods
     
     static func identifier() -> String {
         
         return String(LDGIFCell)
-        
     }
     
     static func separatorHeight() -> CGFloat {
         
         return 3.0
-        
     }
     
     func loadGIF(url: NSURL) {
         
         self.gifImageView.setShowActivityIndicatorView(true);
-        self.gifImageView.setIndicatorStyle(.Gray)
+        self.gifImageView.setIndicatorStyle(.White)
         
         self.gifImageView.contentMode = .ScaleAspectFill
         
         self.gifImageView .sd_setImageWithURL(url, placeholderImage: nil, options: .ContinueInBackground)
+    }
+    
+}
 
+extension LDGIFCell {
+    
+    func randomPlaceholderColor() -> UIColor {
+        
+        let array: Array<UIColor> = [
+            UIColor.purple65GiphyColor(),
+            UIColor.pastelRed65GiphyColor(),
+            UIColor.skyBlue65GiphyColor(),
+            UIColor.green65GiphyColor(),
+            UIColor.yellow65GiphyColor()
+        ]
+
+        let randomIndex = Int(arc4random_uniform(UInt32(array.count)))
+        
+        return array[randomIndex]
     }
     
 }
