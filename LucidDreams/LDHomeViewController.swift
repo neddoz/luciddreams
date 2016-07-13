@@ -21,12 +21,15 @@ class LDHomeViewController: LDViewController {
             switch result {
             case let .Success(response):
                 do {
+                   
+                    let response = try response.mapObject(LDResponse)
                     
-                    let getResponseObject = try response.mapArray(LDGIF)
-                    print(getResponseObject)
                 } catch {
+                    guard let error = error as? CustomStringConvertible else {
+                        break
+                    }
                     
-                    print(error)
+                    print(error.description)
                 }
             case let .Failure(error):
                 

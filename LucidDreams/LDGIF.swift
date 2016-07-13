@@ -6,7 +6,6 @@
 //
 //
 
-import UIKit
 import SwiftyJSON
 import Moya_SwiftyJSONMapper
 
@@ -15,53 +14,42 @@ class LDGIF: ALSwiftyJSONAble {
     var gifId:            String
     var slug:             String
     var trendingDatetime: NSDate
-    var gifURL:           String
-
+    var image:            LDImage?
+    
     required init?(jsonData: JSON) {
         
-        let json = jsonData["data"].array![0]
-        
-        if let gifId = json["id"].string {
+        if let gifId = jsonData["id"].string {
             
             self.gifId = gifId
-            
         } else {
-        
-            print(json["id"])
-            
             return nil
         }
         
-        if let slug = json["slug"].string {
+        if let slug = jsonData["slug"].string {
             
             self.slug = slug
-            
         } else {
-            
-            print(json["slug"])
-            
             return nil
         }
         
-        if json["trending_datetime"].string != nil {
+        if jsonData["trending_datetime"].string != nil {
             
             self.trendingDatetime = NSDate()
-            
         } else {
-            
-            print(json["trending_datetime"])
-            
             return nil
         }
         
-        if let gifURL = json["images"]["fixed_width_downsampled"]["url"].string {
+        if let imageData: Array<JSON> = jsonData["images"].array {
             
-            self.gifURL = gifURL
-            
+            for item in imageData {
+        
+//                if let data = item["fixed_height_downsampled"].dictionary {
+//                
+                    print(item)
+//                    self.image = LDImage(jsonData: JSON(data))
+//                }
+            }
         } else {
-    
-            print(json["images"]["fixed_width_downsampled"]["url"])
-            
             return nil
         }
         

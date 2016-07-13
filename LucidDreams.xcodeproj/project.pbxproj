@@ -30,6 +30,8 @@
 		E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */; };
 		E557DE081D353F310097DEC9 /* LDServerObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */; };
 		E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE091D3541770097DEC9 /* LDGIF.swift */; };
+		E56D25EC1D35DE1200AEBF9B /* LDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */; };
+		E56D25EE1D36011600AEBF9B /* LDImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D25ED1D36011600AEBF9B /* LDImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGiphyAPI.swift; sourceTree = "<group>"; };
 		E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDServerObjectProtocol.swift; sourceTree = "<group>"; };
 		E557DE091D3541770097DEC9 /* LDGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGIF.swift; sourceTree = "<group>"; };
+		E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDResponse.swift; sourceTree = "<group>"; };
+		E56D25ED1D36011600AEBF9B /* LDImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,6 @@
 				E552203C1D32BDD500DB22CC /* Components */,
 				E552203B1D32BDD300DB22CC /* Constants */,
 				E552203A1D32BDD200DB22CC /* Controllers */,
-				E55220391D32BDD000DB22CC /* Data */,
 				E55220381D32BDCF00DB22CC /* Helpers */,
 				E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */,
 				E55220371D32BDCE00DB22CC /* Models */,
@@ -170,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				E557DE091D3541770097DEC9 /* LDGIF.swift */,
+				E56D25ED1D36011600AEBF9B /* LDImage.swift */,
+				E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -179,13 +184,6 @@
 			children = (
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		E55220391D32BDD000DB22CC /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Data;
 			sourceTree = "<group>";
 		};
 		E552203A1D32BDD200DB22CC /* Controllers */ = {
@@ -407,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
+				E56D25EC1D35DE1200AEBF9B /* LDResponse.swift in Sources */,
 				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
 				E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */,
 				E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */,
@@ -422,6 +421,7 @@
 				E55220721D33257C00DB22CC /* LDConstants.swift in Sources */,
 				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
+				E56D25EE1D36011600AEBF9B /* LDImage.swift in Sources */,
 				E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
