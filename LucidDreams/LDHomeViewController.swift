@@ -10,8 +10,6 @@ import UIKit
 import SwiftyJSON
 import CocoaLumberjack
 
-private let kLDEstimatedRowHeight: CGFloat = 200.0
-
 class LDHomeViewController: LDViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak private var tableView: UITableView!
@@ -22,9 +20,8 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         
         super.viewDidLoad()
         
-        self.tableView.backgroundColor    = UIColor.clearColor()
-        self.tableView.rowHeight          = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = kLDEstimatedRowHeight
+        self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.separatorColor  = UIColor.clearColor()
         
         registerTableViewCell()
         
@@ -95,5 +92,9 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         (cell as! LDGIFCell).loadGIF((self.arrayGIFs[indexPath.row].image?.url)!)
     }
     
-}
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+ 
+        return self.arrayGIFs[indexPath.row].heightForScreenWidth(self.view.width) + LDGIFCell.separatorHeight()
+    }
 
+}

@@ -44,7 +44,7 @@ class LDGIF: ALSwiftyJSONAble {
 
         if let imageData = jsonData["images"].dictionary {
             
-            if let data: AnyObject = imageData["fixed_height_downsampled"]!.rawValue {
+            if let data: AnyObject = imageData["fixed_height"]!.rawValue {
                 
                 self.image = LDImage(jsonData: JSON.init(rawValue: data)!)
             }
@@ -52,6 +52,15 @@ class LDGIF: ALSwiftyJSONAble {
             return nil
         }
         
+    }
+
+}
+
+extension LDGIF {
+    
+    func heightForScreenWidth(width: CGFloat) -> CGFloat {
+        
+        return (width * CGFloat((self.image?.height.floatValue)!)) / CGFloat((self.image?.width.floatValue)!)
     }
     
 }

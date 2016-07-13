@@ -16,7 +16,8 @@ class LDGIFCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-    
+        
+        self.backgroundColor = UIColor.clearColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -39,6 +40,12 @@ class LDGIFCell: UITableViewCell {
     static func identifier() -> String {
         
         return String(LDGIFCell)
+        
+    }
+    
+    static func separatorHeight() -> CGFloat {
+        
+        return 3.0
         
     }
     
