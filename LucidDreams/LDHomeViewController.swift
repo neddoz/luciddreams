@@ -55,6 +55,19 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     private func loadTrendingGIFs() {
         
+//        GiphyProvider.request(.Trend).subscribe { (event) in
+//            
+//            switch event {
+//                
+//            case .Next(let response):
+//            print("")
+//                
+//            case .Error(let error):
+//            print("")
+//                
+//            }
+//        }
+        
         GiphyProvider.request(.Trend, completion: { (result) in
             
             switch result {
