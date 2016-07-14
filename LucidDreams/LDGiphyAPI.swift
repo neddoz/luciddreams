@@ -9,7 +9,6 @@
 import Foundation
 import Moya
 import SwiftyJSON
-import Moya_SwiftyJSONMapper
 
 let GiphyProvider = MoyaProvider<Giphy>()
 
@@ -72,7 +71,7 @@ extension Giphy: TargetType {
             return "{\"data\":{\"id\":\"your_new_gif_id\"},\"meta\":{\"status\":200,\"msg\":\"OK\"}}".dataUsingEncoding(NSUTF8StringEncoding)!
         }
     }
-    
+
 }
 
 // MARK: - Helper Methods

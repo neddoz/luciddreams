@@ -17,8 +17,8 @@ class LDGIFCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        self.gifImageView.backgroundColor = randomPlaceholderColor()
-        self.backgroundColor              = UIColor.clearColor()
+        self.backgroundColor = UIColor.clearColor()
+        self.selectionStyle  = .None
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -54,16 +54,17 @@ class LDGIFCell: UITableViewCell {
         
         self.gifImageView.contentMode = .ScaleAspectFill
         
-        self.gifImageView .sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly)
+        self.gifImageView .sd_setImageWithURL(url, placeholderImage: nil, options: .ContinueInBackground)
     }
     
 }
 
 extension LDGIFCell {
     
-    func randomPlaceholderColor() -> UIColor {
+    func randomPlaceholderColor() {
         
         let array: Array<UIColor> = [
+            
             UIColor.purple65GiphyColor(),
             UIColor.pastelRed65GiphyColor(),
             UIColor.skyBlue65GiphyColor(),
@@ -71,9 +72,9 @@ extension LDGIFCell {
             UIColor.yellow65GiphyColor()
         ]
 
-        let randomIndex = Int(arc4random_uniform(UInt32(array.count)))
+        let randomIndex = Int(rand()) % array.count
         
-        return array[randomIndex]
+        self.gifImageView.backgroundColor = array[randomIndex]
     }
     
 }

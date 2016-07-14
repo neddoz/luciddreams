@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import Moya_SwiftyJSONMapper
 
-class LDResponse: ALSwiftyJSONAble {
+class LDResponse: LDMappingProtocol {
     
     var GIFs:       Array<LDGIF> = []
     var pagination: LDPaginator?
@@ -36,5 +36,5 @@ class LDResponse: ALSwiftyJSONAble {
         }
         
     }
-    
+
 }

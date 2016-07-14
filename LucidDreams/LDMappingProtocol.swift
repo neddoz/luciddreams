@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-protocol LDServerObjectProtocol {
+protocol LDMappingProtocol {
     
-    init?(jsonObject: AnyObject)
+    init?(jsonData:JSON)
     
 }

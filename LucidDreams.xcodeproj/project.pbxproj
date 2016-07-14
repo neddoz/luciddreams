@@ -28,7 +28,7 @@
 		E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */; };
 		E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFC1D3422300097DEC9 /* LDStartupController.swift */; };
 		E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */; };
-		E557DE081D353F310097DEC9 /* LDServerObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */; };
+		E557DE081D353F310097DEC9 /* LDMappingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE071D353F310097DEC9 /* LDMappingProtocol.swift */; };
 		E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE091D3541770097DEC9 /* LDGIF.swift */; };
 		E56D25EC1D35DE1200AEBF9B /* LDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */; };
 		E56D25EE1D36011600AEBF9B /* LDImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D25ED1D36011600AEBF9B /* LDImage.swift */; };
@@ -64,7 +64,7 @@
 		E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LDAdditions.swift"; sourceTree = "<group>"; };
 		E557DDFC1D3422300097DEC9 /* LDStartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDStartupController.swift; sourceTree = "<group>"; };
 		E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGiphyAPI.swift; sourceTree = "<group>"; };
-		E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDServerObjectProtocol.swift; sourceTree = "<group>"; };
+		E557DE071D353F310097DEC9 /* LDMappingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDMappingProtocol.swift; sourceTree = "<group>"; };
 		E557DE091D3541770097DEC9 /* LDGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGIF.swift; sourceTree = "<group>"; };
 		E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDResponse.swift; sourceTree = "<group>"; };
 		E56D25ED1D36011600AEBF9B /* LDImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDImage.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		E55220351D32BDC900DB22CC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E557DE071D353F310097DEC9 /* LDServerObjectProtocol.swift */,
+				E557DE071D353F310097DEC9 /* LDMappingProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -438,7 +438,7 @@
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
 				E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */,
-				E557DE081D353F310097DEC9 /* LDServerObjectProtocol.swift in Sources */,
+				E557DE081D353F310097DEC9 /* LDMappingProtocol.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E5D174841D369CC20019156E /* LDGIFCell.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,

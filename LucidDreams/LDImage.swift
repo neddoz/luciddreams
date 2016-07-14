@@ -8,9 +8,8 @@
 
 import Foundation
 import SwiftyJSON
-import Moya_SwiftyJSONMapper
 
-class LDImage: ALSwiftyJSONAble {
+class LDImage: LDMappingProtocol {
     
     var url:    NSURL
     var width:  NSNumber

@@ -25,7 +25,7 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         
         self.filterControl.didChangeFiltering = { (state: LDFilterControl.LDFiltering) -> Void in
             
-//            if state == 
+            //            if state ==
             
         }
         
@@ -58,28 +58,19 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         GiphyProvider.request(.Trend, completion: { (result) in
             
             switch result {
+                
             case let .Success(response):
-                do {
+
+                    let responseObj = LDResponse(jsonData: JSON(data: response.data))
                     
-                    let responseObj = try response.mapObject(LDResponse)
-                    
-                    self.arrayGIFs = responseObj.GIFs
+                    self.arrayGIFs = responseObj!.GIFs
                     
                     self.tableView.reloadData()
                     
                     self.refreshControl.endRefreshing()
                     
                     DDLogInfo("\(JSON(data: response.data))")
-                    
-                } catch {
-                    guard let error = error as? CustomStringConvertible else {
-                        break
-                    }
-                    
-                    self.refreshControl.endRefreshing()
-                    
-                    DDLogError(error.description)
-                }
+                
             case let .Failure(error):
                 
                 guard let error = error as? CustomStringConvertible else {
@@ -98,7 +89,8 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCellWithIdentifier(LDGIFCell.identifier())!
+        return tableView.dequeueReusableCellWithIdentifier(LDGIFCell.identifier(),
+                                                           forIndexPath: indexPath) as UITableViewCell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,11 +103,12 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         (cell as! LDGIFCell).loadGIF((self.arrayGIFs[indexPath.row].image?.url)!)
+        (cell as! LDGIFCell).randomPlaceholderColor()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
- 
+        
         return self.arrayGIFs[indexPath.row].heightForScreenWidth(self.view.width) + LDGIFCell.separatorHeight()
     }
-
+    
 }

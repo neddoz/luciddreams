@@ -7,9 +7,8 @@
 //
 
 import SwiftyJSON
-import Moya_SwiftyJSONMapper
 
-class LDGIF: ALSwiftyJSONAble {
+class LDGIF: LDMappingProtocol {
     
     var gifId:            String
     var slug:             String

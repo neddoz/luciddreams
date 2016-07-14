@@ -8,9 +8,8 @@
 
 import Foundation
 import SwiftyJSON
-import Moya_SwiftyJSONMapper
 
-class LDPaginator: ALSwiftyJSONAble {
+class LDPaginator: LDMappingProtocol {
     
     var count:  NSNumber
     var offset: NSNumber
