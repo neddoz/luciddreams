@@ -10,7 +10,7 @@ import Foundation
 import Moya
 import SwiftyJSON
 
-let GiphyProvider = MoyaProvider<Giphy>()
+let GiphyProvider = RxMoyaProvider<Giphy>()
 
 private let token = "dc6zaTOxFJmzC"
 
@@ -72,6 +72,18 @@ extension Giphy: TargetType {
         }
     }
 
+    public var multipartBody: [MultipartFormData]? {
+        
+        switch self {
+            
+        case .Trend:
+            return nil
+            
+        case .Random:
+            return nil
+        }
+    }
+    
 }
 
 // MARK: - Helper Methods
