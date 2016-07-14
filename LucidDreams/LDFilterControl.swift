@@ -12,8 +12,8 @@ class LDFilterControl: UIView {
     
     enum LDFiltering {
         
-        case LDFilteringTrending
-        case LDFilteringRandom
+        case Trending
+        case Random
     }
     
     @IBOutlet weak private var view:         UIView!
@@ -25,8 +25,12 @@ class LDFilterControl: UIView {
     @IBOutlet weak private var trendingLabel: UILabel!
     @IBOutlet weak private var randomLabel:   UILabel!
     
-    let trendingTapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
-    let randomTapGesture:   UITapGestureRecognizer = UITapGestureRecognizer()
+    private(set) var filteringState: LDFiltering = .Trending
+    
+    var didChangeFiltering: ((LDFiltering) -> Void)?
+    
+    private let trendingTapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+    private let randomTapGesture:   UITapGestureRecognizer = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
         
@@ -82,21 +86,29 @@ class LDFilterControl: UIView {
     
     private func animateControlToOriginX(originX: CGFloat) {
         
-        UIView.animateWithDuration(0.17) {
+        UIView.animateWithDuration(0.17,
+                                   animations: {
+                                    
+                                    self.markerView.x = originX;
+        }) { (Bool) in
             
-            self.markerView.x = originX;
-            
+            self.didChangeFiltering!(self.filteringState)
         }
+        
     }
     
     // MARK: - Action Methods
     
     @objc private func trendingAction(sender: AnyObject?) {
         
+        self.filteringState = .Trending
+        
         self.animateControlToOriginX(self.trendingView.x + self.trendingLabel.x);
     }
     
     @objc private func randomAction(sender: AnyObject?) {
+        
+        self.filteringState = .Random
         
         self.animateControlToOriginX(self.randomView.x + self.randomLabel.x);
     }

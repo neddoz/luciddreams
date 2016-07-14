@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LDViewController: UIViewController, UIScrollViewDelegate {
+class LDViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     

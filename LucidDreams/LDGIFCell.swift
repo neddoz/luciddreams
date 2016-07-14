@@ -54,7 +54,7 @@ class LDGIFCell: UITableViewCell {
         
         self.gifImageView.contentMode = .ScaleAspectFill
         
-        self.gifImageView .sd_setImageWithURL(url, placeholderImage: nil, options: .ContinueInBackground)
+        self.gifImageView .sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly)
     }
     
 }

@@ -14,12 +14,20 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     private var arrayGIFs: Array<LDGIF> = []
     
+    @IBOutlet weak private var filterControl: LDFilterControl!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.separatorColor  = UIColor.clearColor()
+        
+        self.filterControl.didChangeFiltering = { (state: LDFilterControl.LDFiltering) -> Void in
+            
+//            if state == 
+            
+        }
         
         registerTableViewCell()
         
@@ -29,6 +37,11 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
+    }
+    
+    override func refreshAction() {
+        
+        loadTrendingGIFs()
     }
     
     // MARK: - Private Methods
@@ -54,6 +67,8 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
                     
                     self.tableView.reloadData()
                     
+                    self.refreshControl.endRefreshing()
+                    
                     DDLogInfo("\(JSON(data: response.data))")
                     
                 } catch {
@@ -61,11 +76,19 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
                         break
                     }
                     
-                    print(error.description)
+                    self.refreshControl.endRefreshing()
+                    
+                    DDLogError(error.description)
                 }
             case let .Failure(error):
                 
-                print(error)
+                guard let error = error as? CustomStringConvertible else {
+                    break
+                }
+                
+                self.refreshControl.endRefreshing()
+                
+                DDLogError(error.description)
             }
             
         })

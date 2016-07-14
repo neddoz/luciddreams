@@ -18,6 +18,7 @@ private let token = "dc6zaTOxFJmzC"
 public enum Giphy {
     
     case Trend
+    case Random
 }
 
 extension Giphy: TargetType {
@@ -30,6 +31,9 @@ extension Giphy: TargetType {
             
         case .Trend:
             return "/gifs/trending"
+            
+        case .Random:
+            return "gifs/random"
         }
     }
     
@@ -39,6 +43,9 @@ extension Giphy: TargetType {
             
         case .Trend:
             return .GET
+            
+        case .Random:
+            return .GET
         }
     }
     
@@ -47,7 +54,10 @@ extension Giphy: TargetType {
         switch self {
             
         case .Trend:
-            return ["api_key": token]
+            return ["api_key": token, "limit": 30]
+            
+        case .Random:
+            return ["api_key": token, "rating": "pg"]
         }
     }
     
@@ -56,6 +66,9 @@ extension Giphy: TargetType {
         switch self {
             
         case .Trend:
+            return "{\"data\":{\"id\":\"your_new_gif_id\"},\"meta\":{\"status\":200,\"msg\":\"OK\"}}".dataUsingEncoding(NSUTF8StringEncoding)!
+            
+        case .Random:
             return "{\"data\":{\"id\":\"your_new_gif_id\"},\"meta\":{\"status\":200,\"msg\":\"OK\"}}".dataUsingEncoding(NSUTF8StringEncoding)!
         }
     }
