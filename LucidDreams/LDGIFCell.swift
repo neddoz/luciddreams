@@ -16,6 +16,35 @@ class LDGIFCell: UITableViewCell {
     @IBOutlet weak private var trendTag:         UIView!
     @IBOutlet weak private var circularProgress: LDCircleProgressView!
     
+    var GIF: LDGIF? {
+        
+        didSet {
+            
+            self.gifImageView.contentMode = .ScaleAspectFill
+            
+            self.circularProgress.resetCircularProgress()
+            
+            self.gifImageView.sd_setImageWithURL(GIF?.image?.url,
+                                                 placeholderImage: nil,
+                                                 options: .ContinueInBackground,
+                                                 progress: { (receivedSize: Int, expectedSize: Int) in
+                                                    
+                                                    self.circularProgress.progress = Double(receivedSize) / Double(expectedSize)
+                })
+            { (image: UIImage!, error: NSError!, type: SDImageCacheType, url: NSURL!) in
+                
+                if (error == nil) {
+                    
+                    self.circularProgress?.alpha = 0.00
+                } else {
+                    
+                    DDLogError(error.description)
+                }
+                
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -23,7 +52,7 @@ class LDGIFCell: UITableViewCell {
         let randomColor = randomPlaceholderColor()
         
         self.circularProgress.centerFillColor = randomColor
-        self.gifImageView?.backgroundColor       = randomColor
+        self.gifImageView?.backgroundColor    = randomColor
         self.backgroundColor                  = UIColor.clearColor()
         self.selectionStyle                   = .None
         self.trendTag.alpha                   = 0.0
@@ -55,26 +84,7 @@ class LDGIFCell: UITableViewCell {
         return 3.0
     }
     
-    func loadGIF(gif: LDGIF) {
-        
-        self.gifImageView.contentMode = .ScaleAspectFill
-        
-        self.circularProgress.resetCircularProgress()
-        
-        self.gifImageView.sd_setImageWithURL(gif.image?.url,
-                                             placeholderImage: nil,
-                                             options: .ContinueInBackground,
-                                             progress: { (receivedSize: Int, expectedSize: Int) in
-                                                
-                                                self.circularProgress.progress = Double(receivedSize) / Double(expectedSize)
-            })
-        { (image: UIImage!, error: NSError!, type: SDImageCacheType, url: NSURL!) in
-            
-            // Check for error!
-            
-            self.circularProgress?.alpha = 0.00
-        }
-    }
+    // MARK: - Private Methods
     
     func randomPlaceholderColor() -> UIColor {
         

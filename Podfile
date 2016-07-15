@@ -12,4 +12,5 @@ target 'LucidDreams' do
   pod 'Moya/RxSwift'
   pod 'CircleProgressView', '~> 1.0'
   pod 'BRYXBanner', '~> 0.5'
+  pod 'RxCocoa', '~> 2.6'
 end

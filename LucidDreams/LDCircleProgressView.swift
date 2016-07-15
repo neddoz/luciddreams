@@ -23,7 +23,7 @@ class LDCircleProgressView: CircleProgressView {
         self.progress             = 0.00
         self.backgroundColor      = UIColor.clearColor()
         self.clockwise            = true
-        self.trackWidth           = 7.0
+        self.trackWidth           = 5.0
         self.centerImage          = nil
         self.trackImage           = nil
         self.trackFillColor       = UIColor.whiteColor()

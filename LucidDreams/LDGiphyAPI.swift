@@ -18,6 +18,7 @@ public enum Giphy {
     
     case Trend
     case Random
+    case Search(query: String, offset: Int)
 }
 
 extension Giphy: TargetType {
@@ -33,6 +34,9 @@ extension Giphy: TargetType {
             
         case .Random:
             return "gifs/random"
+            
+        case .Search(_, _):
+            return "gifs/search"
         }
     }
     
@@ -44,6 +48,9 @@ extension Giphy: TargetType {
             return .GET
             
         case .Random:
+            return .GET
+            
+        case .Search(_, _):
             return .GET
         }
     }
@@ -57,6 +64,9 @@ extension Giphy: TargetType {
             
         case .Random:
             return ["api_key": token, "rating": "pg"]
+            
+        case .Search(let query, let offset):
+            return ["api_key": token, "q": query, "rating": "pg", "offset": offset]
         }
     }
     
@@ -65,10 +75,13 @@ extension Giphy: TargetType {
         switch self {
             
         case .Trend:
-            return "{\"data\":{\"id\":\"your_new_gif_id\"},\"meta\":{\"status\":200,\"msg\":\"OK\"}}".dataUsingEncoding(NSUTF8StringEncoding)!
+            return "}".dataUsingEncoding(NSUTF8StringEncoding)!
             
         case .Random:
-            return "{\"data\":{\"id\":\"your_new_gif_id\"},\"meta\":{\"status\":200,\"msg\":\"OK\"}}".dataUsingEncoding(NSUTF8StringEncoding)!
+            return "".dataUsingEncoding(NSUTF8StringEncoding)!
+            
+        case .Search(_, _):
+            return "".dataUsingEncoding(NSUTF8StringEncoding)!
         }
     }
 
@@ -80,6 +93,9 @@ extension Giphy: TargetType {
             return nil
             
         case .Random:
+            return nil
+            
+        case .Search(_, _):
             return nil
         }
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06D8F7DBBB83E5E78BAFFD09 /* Pods_LucidDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */; };
 		E54A7E671D393EEA0061C98A /* LDCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */; };
+		E54A7E6C1D3950C10061C98A /* Banner+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */; };
 		E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */; };
 		E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220211D32BDA800DB22CC /* LDHomeViewController.swift */; };
 		E55220251D32BDA800DB22CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55220231D32BDA800DB22CC /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		667496165D9B6A1DE7AE053B /* Pods-LucidDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.debug.xcconfig"; sourceTree = "<group>"; };
 		81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.release.xcconfig"; sourceTree = "<group>"; };
 		E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCircleProgressView.swift; sourceTree = "<group>"; };
+		E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Banner+LDAdditions.swift"; sourceTree = "<group>"; };
 		E552201C1D32BDA700DB22CC /* Lucid Dreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lucid Dreams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDAppDelegate.swift; sourceTree = "<group>"; };
 		E55220211D32BDA800DB22CC /* LDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDHomeViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		E552203D1D32BDD600DB22CC /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */,
 				E55220461D32CC6300DB22CC /* UIColor+LDAdditions.swift */,
 				E55220481D32D3F200DB22CC /* UIView-Positioning */,
 				E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */,
@@ -441,6 +444,7 @@
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
 				E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */,
+				E54A7E6C1D3950C10061C98A /* Banner+LDAdditions.swift in Sources */,
 				E557DE081D353F310097DEC9 /* LDMappingProtocol.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E5D174841D369CC20019156E /* LDGIFCell.swift in Sources */,

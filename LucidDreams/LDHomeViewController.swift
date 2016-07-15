@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import BRYXBanner
 import SwiftyJSON
 import CocoaLumberjack
 
@@ -24,8 +27,6 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         self.tableView.separatorColor  = UIColor.clearColor()
         
         self.filterControl.didChangeFiltering = { (state: LDFilterControl.LDFiltering) -> Void in
-            
-            //            if state ==
             
         }
         
@@ -55,42 +56,38 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     private func loadTrendingGIFs() {
         
-//        GiphyProvider.request(.Trend).subscribe { (event) in
-//            
-//            switch event {
-//                
-//            case .Next(let response):
-//            print("")
-//                
-//            case .Error(let error):
-//            print("")
-//                
-//            }
-//        }
-        
         GiphyProvider.request(.Trend, completion: { (result) in
             
             switch result {
                 
             case let .Success(response):
-
-                    let responseObj = LDResponse(jsonData: JSON(data: response.data))
+                
+                self.refreshControl.endRefreshing()
+                
+                if response.statusCode != 200 {
                     
-                    self.arrayGIFs = responseObj!.GIFs
+                    Banner.showErrorBanner()
                     
-                    self.tableView.reloadData()
-                    
-                    self.refreshControl.endRefreshing()
-                    
-                    DDLogInfo("\(JSON(data: response.data))")
+                    return
+                }
+                
+                let responseObj = LDResponse(jsonData: JSON(data: response.data))
+                
+                self.arrayGIFs = responseObj!.GIFs
+                
+                self.tableView.reloadData()
+                
+                DDLogInfo("\(JSON(data: response.data))")
                 
             case let .Failure(error):
+                
+                self.refreshControl.endRefreshing()
+                
+                Banner.showErrorBanner()
                 
                 guard let error = error as? CustomStringConvertible else {
                     break
                 }
-                
-                self.refreshControl.endRefreshing()
                 
                 DDLogError(error.description)
             }
@@ -115,7 +112,7 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        (cell as! LDGIFCell).loadGIF(self.arrayGIFs[indexPath.row])
+        (cell as! LDGIFCell).GIF = self.arrayGIFs[indexPath.row]
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
