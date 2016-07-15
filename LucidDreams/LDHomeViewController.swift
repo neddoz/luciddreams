@@ -115,8 +115,7 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        (cell as! LDGIFCell).loadGIF((self.arrayGIFs[indexPath.row].image?.url)!)
-        (cell as! LDGIFCell).randomPlaceholderColor()
+        (cell as! LDGIFCell).loadGIF(self.arrayGIFs[indexPath.row])
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

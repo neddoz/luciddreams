@@ -10,4 +10,6 @@ target 'LucidDreams' do
   pod 'SDWebImage', '~> 3.8'
   pod 'Moya', '~> 7.0'
   pod 'Moya/RxSwift'
+  pod 'CircleProgressView', '~> 1.0'
+  pod 'BRYXBanner', '~> 0.5'
 end

@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SF-UI-Display-Black.otf">
+            <string>SFUIDisplay-Black</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,18 +21,54 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9W-BT-hpt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAZ-tK-o0G">
+                        <rect key="frame" x="249" y="5" width="71" height="23"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#TREND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kie-wR-Jz7">
+                                <rect key="frame" x="7" y="1" width="57" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VOy-BN-EeW"/>
+                                    <constraint firstAttribute="width" constant="57" id="sVa-Jq-FbG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Black" family="SF UI Display" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kie-wR-Jz7" firstAttribute="top" secondItem="TAZ-tK-o0G" secondAttribute="top" constant="1" id="G8N-f0-s2f"/>
+                            <constraint firstAttribute="height" constant="23" id="IM5-aC-7Ts"/>
+                            <constraint firstItem="Kie-wR-Jz7" firstAttribute="centerX" secondItem="TAZ-tK-o0G" secondAttribute="centerX" id="wLQ-0V-ZqX"/>
+                            <constraint firstAttribute="width" constant="71" id="wuD-ID-JhD"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhK-dD-dwr" customClass="LDCircleProgressView" customModule="Lucid_Dreams" customModuleProvider="target">
+                        <rect key="frame" x="112" y="53" width="96" height="96"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="AGh-Ba-fbO"/>
+                            <constraint firstAttribute="width" constant="96" id="i3E-yk-wfu"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="c9W-BT-hpt" secondAttribute="trailing" id="0oa-0M-p7F"/>
                     <constraint firstItem="c9W-BT-hpt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4CU-XL-RKD"/>
+                    <constraint firstItem="ZhK-dD-dwr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Lmv-5y-Yo8"/>
+                    <constraint firstAttribute="trailing" secondItem="TAZ-tK-o0G" secondAttribute="trailing" id="egj-6b-ebN"/>
                     <constraint firstAttribute="bottom" secondItem="c9W-BT-hpt" secondAttribute="bottom" constant="3" id="oCx-kV-6ti"/>
                     <constraint firstItem="c9W-BT-hpt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sxY-ti-bQc"/>
+                    <constraint firstItem="TAZ-tK-o0G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="thV-c7-b01"/>
+                    <constraint firstItem="ZhK-dD-dwr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vz3-Dk-pvr"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="circularProgress" destination="ZhK-dD-dwr" id="gFe-U8-Naw"/>
                 <outlet property="gifImageView" destination="c9W-BT-hpt" id="UvX-LH-TnH"/>
+                <outlet property="trendTag" destination="TAZ-tK-o0G" id="dSf-bg-8qS"/>
             </connections>
-            <point key="canvasLocation" x="178" y="296"/>
+            <point key="canvasLocation" x="367" y="353.5"/>
         </tableViewCell>
     </objects>
 </document>
