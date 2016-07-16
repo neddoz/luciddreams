@@ -16,6 +16,9 @@ class LDGIFCell: UITableViewCell {
     @IBOutlet weak private var trendTag:         UIView!
     @IBOutlet weak private var circularProgress: LDCircleProgressView!
     
+    static let identifier               = String(LDGIFCell)
+    static let separatorHeight: CGFloat = 3.0
+    
     var GIF: LDGIF? {
         
         didSet {
@@ -40,7 +43,6 @@ class LDGIFCell: UITableViewCell {
                     
                     DDLogError(error.description)
                 }
-                
             }
         }
     }
@@ -70,18 +72,6 @@ class LDGIFCell: UITableViewCell {
         gifImageView.image = nil
         
         gifImageView.sd_cancelCurrentImageLoad()
-    }
-    
-    // MARK: - Public Methods
-    
-    static func identifier() -> String {
-        
-        return String(LDGIFCell)
-    }
-    
-    static func separatorHeight() -> CGFloat {
-        
-        return 3.0
     }
     
     // MARK: - Private Methods

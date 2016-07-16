@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftyJSON
-import Moya_SwiftyJSONMapper
 
 class LDResponse: LDMappingProtocol {
     

@@ -17,11 +17,6 @@ class LDViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-        super.viewDidLayoutSubviews()
         
         self.refreshControl           = UIRefreshControl()
         self.refreshControl.tintColor = UIColor.yellowGiphyColor()
@@ -45,7 +40,9 @@ class LDViewController: UIViewController {
     
     func refreshAction() {
         
-        // Override me <--
+        /*
+         *  Override me <--
+         */
     }
     
 }

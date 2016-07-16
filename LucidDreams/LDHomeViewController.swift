@@ -51,7 +51,7 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         
         let nibName = UINib(nibName: String(LDGIFCell), bundle:nil)
         
-        self.tableView.registerNib(nibName, forCellReuseIdentifier: LDGIFCell.identifier())
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: LDGIFCell.identifier)
     }
     
     private func loadTrendingGIFs() {
@@ -99,7 +99,7 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCellWithIdentifier(LDGIFCell.identifier(),
+        return tableView.dequeueReusableCellWithIdentifier(LDGIFCell.identifier,
                                                            forIndexPath: indexPath) as UITableViewCell
     }
     
@@ -117,7 +117,7 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return self.arrayGIFs[indexPath.row].heightForScreenWidth(self.view.width) + LDGIFCell.separatorHeight()
+        return self.arrayGIFs[indexPath.row].heightForScreenWidth(self.view.width) + LDGIFCell.separatorHeight
     }
     
 }
