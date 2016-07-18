@@ -8,9 +8,6 @@
 
 import Foundation
 import Moya
-import SwiftyJSON
-
-let GiphyProvider = RxMoyaProvider<Giphy>()
 
 private let token = "dc6zaTOxFJmzC"
 
@@ -18,7 +15,7 @@ public enum Giphy {
     
     case Trend
     case Random
-    case Search(query: String, offset: Int)
+    case Search(String, Int)
 }
 
 extension Giphy: TargetType {
@@ -85,20 +82,20 @@ extension Giphy: TargetType {
         }
     }
 
-    public var multipartBody: [MultipartFormData]? {
-        
-        switch self {
-            
-        case .Trend:
-            return nil
-            
-        case .Random:
-            return nil
-            
-        case .Search(_, _):
-            return nil
-        }
-    }
+//    public var multipartBody: [MultipartFormData]? {
+//        
+//        switch self {
+//            
+//        case .Trend:
+//            return nil
+//            
+//        case .Random:
+//            return nil
+//            
+//        case .Search(_, _):
+//            return nil
+//        }
+//    }
     
 }
 

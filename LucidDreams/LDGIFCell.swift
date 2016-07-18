@@ -19,7 +19,7 @@ class LDGIFCell: UITableViewCell {
     static let identifier               = String(LDGIFCell)
     static let separatorHeight: CGFloat = 3.0
     
-    var GIF: LDGIF? {
+    var gif: LDGif? {
         
         didSet {
             
@@ -27,7 +27,7 @@ class LDGIFCell: UITableViewCell {
             
             self.circularProgress.resetCircularProgress()
             
-            self.gifImageView.sd_setImageWithURL(GIF?.image?.url,
+            self.gifImageView.sd_setImageWithURL(NSURL(string: (gif?.image.url)!),
                                                  placeholderImage: nil,
                                                  options: .ContinueInBackground,
                                                  progress: { (receivedSize: Int, expectedSize: Int) in
@@ -58,11 +58,13 @@ class LDGIFCell: UITableViewCell {
         self.backgroundColor                  = UIColor.clearColor()
         self.selectionStyle                   = .None
         self.trendTag.alpha                   = 0.0
+        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         
         super.setSelected(selected, animated: animated)
+        
     }
     
     override func prepareForReuse() {
@@ -72,6 +74,7 @@ class LDGIFCell: UITableViewCell {
         gifImageView.image = nil
         
         gifImageView.sd_cancelCurrentImageLoad()
+        
     }
     
     // MARK: - Private Methods
@@ -90,5 +93,6 @@ class LDGIFCell: UITableViewCell {
         let randomIndex = Int(rand()) % array.count
         
         return array[randomIndex]
+        
     }
 }

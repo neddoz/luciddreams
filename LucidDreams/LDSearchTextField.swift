@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LDSearchBar: UITextField {
+class LDSearchTextField: UITextField {
 
     override init(frame: CGRect) {
         

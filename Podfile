@@ -6,11 +6,13 @@ target 'LucidDreams' do
 
   pod 'Alamofire', '~> 3.4'
   pod 'CocoaLumberjack/Swift'
-  pod 'SwiftyJSON', '~> 2.3'
-  pod 'SDWebImage', '~> 3.8'
-  pod 'Moya', '~> 7.0'
   pod 'Moya/RxSwift'
+  pod 'RxCocoa', '~> 2.6'
+  pod 'Moya-ModelMapper/RxSwift'
+  pod 'RxOptional'
+  pod 'RxDataSources'
+  pod 'RxDelegateCells', '~> 0.1'
+  pod 'SDWebImage', '~> 3.8'
   pod 'CircleProgressView', '~> 1.0'
   pod 'BRYXBanner', '~> 0.5'
-  pod 'RxCocoa', '~> 2.6'
 end

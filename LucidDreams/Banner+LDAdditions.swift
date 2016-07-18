@@ -13,15 +13,7 @@ extension Banner {
     
     static func showErrorBanner() {
         
-        let banner = Banner(title:           "Something goes wrong!",
-                            subtitle:        "Please try again.",
-                            image:           UIImage(named: "error-banner-icon"),
-                            backgroundColor: UIColor(red:0.95, green:0.33, blue:0.34, alpha:1.00))
-        
-        banner.dismissesOnTap = true
-        
-        banner.show(duration: 3.0)
-        
+        showErrorBanner("Ouch!", subtitle: "Something went wrong.")
     }
     
     static func showErrorBanner(title: String, subtitle: String) {

@@ -10,6 +10,8 @@
 		06D8F7DBBB83E5E78BAFFD09 /* Pods_LucidDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */; };
 		E54A7E671D393EEA0061C98A /* LDCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */; };
 		E54A7E6C1D3950C10061C98A /* Banner+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */; };
+		E54AC6481D3AB98D003CD75D /* LDGifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AC6471D3AB98D003CD75D /* LDGifViewModel.swift */; };
+		E54AC64C1D3ABC7B003CD75D /* LDGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AC64B1D3ABC7B003CD75D /* LDGif.swift */; };
 		E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */; };
 		E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220211D32BDA800DB22CC /* LDHomeViewController.swift */; };
 		E55220251D32BDA800DB22CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55220231D32BDA800DB22CC /* Main.storyboard */; };
@@ -24,17 +26,12 @@
 		E552204F1D32F86100DB22CC /* LDSearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */; };
 		E55220701D33255700DB22CC /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E552206F1D33253A00DB22CC /* SF-UI-Display-Black.otf */; };
 		E55220721D33257C00DB22CC /* LDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220711D33257C00DB22CC /* LDConstants.swift */; };
-		E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220731D33335000DB22CC /* LDSearchBar.swift */; };
+		E55220741D33335000DB22CC /* LDSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220731D33335000DB22CC /* LDSearchTextField.swift */; };
 		E55220781D334CFA00DB22CC /* LDFilterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220771D334CFA00DB22CC /* LDFilterControl.swift */; };
 		E552207A1D334D8900DB22CC /* LDFilterControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55220791D334D8900DB22CC /* LDFilterControl.xib */; };
 		E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */; };
 		E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DDFC1D3422300097DEC9 /* LDStartupController.swift */; };
 		E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */; };
-		E557DE081D353F310097DEC9 /* LDMappingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE071D353F310097DEC9 /* LDMappingProtocol.swift */; };
-		E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E557DE091D3541770097DEC9 /* LDGIF.swift */; };
-		E56D25EC1D35DE1200AEBF9B /* LDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */; };
-		E56D25EE1D36011600AEBF9B /* LDImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D25ED1D36011600AEBF9B /* LDImage.swift */; };
-		E5D174811D3695F60019156E /* LDPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D174801D3695F60019156E /* LDPaginator.swift */; };
 		E5D174841D369CC20019156E /* LDGIFCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D174821D369CC20019156E /* LDGIFCell.swift */; };
 		E5D174851D369CC20019156E /* LDGIFCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D174831D369CC20019156E /* LDGIFCell.xib */; };
 		E5D1748C1D36A6280019156E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D1748B1D36A6280019156E /* ImageIO.framework */; };
@@ -46,6 +43,8 @@
 		81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.release.xcconfig"; sourceTree = "<group>"; };
 		E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCircleProgressView.swift; sourceTree = "<group>"; };
 		E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Banner+LDAdditions.swift"; sourceTree = "<group>"; };
+		E54AC6471D3AB98D003CD75D /* LDGifViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGifViewModel.swift; sourceTree = "<group>"; };
+		E54AC64B1D3ABC7B003CD75D /* LDGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGif.swift; sourceTree = "<group>"; };
 		E552201C1D32BDA700DB22CC /* Lucid Dreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lucid Dreams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDAppDelegate.swift; sourceTree = "<group>"; };
 		E55220211D32BDA800DB22CC /* LDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDHomeViewController.swift; sourceTree = "<group>"; };
@@ -62,17 +61,12 @@
 		E552204E1D32F86100DB22CC /* LDSearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchNavigationController.swift; sourceTree = "<group>"; };
 		E552206F1D33253A00DB22CC /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		E55220711D33257C00DB22CC /* LDConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDConstants.swift; sourceTree = "<group>"; };
-		E55220731D33335000DB22CC /* LDSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchBar.swift; sourceTree = "<group>"; };
+		E55220731D33335000DB22CC /* LDSearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchTextField.swift; sourceTree = "<group>"; };
 		E55220771D334CFA00DB22CC /* LDFilterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDFilterControl.swift; sourceTree = "<group>"; };
 		E55220791D334D8900DB22CC /* LDFilterControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDFilterControl.xib; sourceTree = "<group>"; };
 		E557DDFA1D340A200097DEC9 /* UIView+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LDAdditions.swift"; sourceTree = "<group>"; };
 		E557DDFC1D3422300097DEC9 /* LDStartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDStartupController.swift; sourceTree = "<group>"; };
 		E557DE001D3445730097DEC9 /* LDGiphyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGiphyAPI.swift; sourceTree = "<group>"; };
-		E557DE071D353F310097DEC9 /* LDMappingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDMappingProtocol.swift; sourceTree = "<group>"; };
-		E557DE091D3541770097DEC9 /* LDGIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGIF.swift; sourceTree = "<group>"; };
-		E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDResponse.swift; sourceTree = "<group>"; };
-		E56D25ED1D36011600AEBF9B /* LDImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDImage.swift; sourceTree = "<group>"; };
-		E5D174801D3695F60019156E /* LDPaginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDPaginator.swift; sourceTree = "<group>"; };
 		E5D174821D369CC20019156E /* LDGIFCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGIFCell.swift; sourceTree = "<group>"; };
 		E5D174831D369CC20019156E /* LDGIFCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDGIFCell.xib; sourceTree = "<group>"; };
 		E5D174871D36A5DC0019156E /* LucidDreams-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LucidDreams-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -101,6 +95,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E54AC6461D3AB8D9003CD75D /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E54AC6471D3AB98D003CD75D /* LDGifViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
 		E55220131D32BDA700DB22CC = {
 			isa = PBXGroup;
 			children = (
@@ -126,13 +128,12 @@
 				E552203C1D32BDD500DB22CC /* Components */,
 				E552203B1D32BDD300DB22CC /* Constants */,
 				E552203A1D32BDD200DB22CC /* Controllers */,
-				E55220381D32BDCF00DB22CC /* Helpers */,
 				E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */,
 				E55220371D32BDCE00DB22CC /* Models */,
 				E55220361D32BDCC00DB22CC /* Networking */,
-				E55220351D32BDC900DB22CC /* Protocols */,
 				E55220331D32BDB900DB22CC /* Resources */,
 				E55220321D32BDB800DB22CC /* View Controllers */,
+				E54AC6461D3AB8D9003CD75D /* View Models */,
 				E55220311D32BDB500DB22CC /* Views */,
 			);
 			path = LucidDreams;
@@ -169,14 +170,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		E55220351D32BDC900DB22CC /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				E557DE071D353F310097DEC9 /* LDMappingProtocol.swift */,
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 		E55220361D32BDCC00DB22CC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,18 +181,9 @@
 		E55220371D32BDCE00DB22CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E557DE091D3541770097DEC9 /* LDGIF.swift */,
-				E56D25ED1D36011600AEBF9B /* LDImage.swift */,
-				E5D1747F1D3695BF0019156E /* Request Models */,
+				E54AC64B1D3ABC7B003CD75D /* LDGif.swift */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		E55220381D32BDCF00DB22CC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		E552203A1D32BDD200DB22CC /* Controllers */ = {
@@ -225,7 +209,7 @@
 				E55220771D334CFA00DB22CC /* LDFilterControl.swift */,
 				E55220791D334D8900DB22CC /* LDFilterControl.xib */,
 				E55220441D32C9E200DB22CC /* LDNavigationBar.swift */,
-				E55220731D33335000DB22CC /* LDSearchBar.swift */,
+				E55220731D33335000DB22CC /* LDSearchTextField.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -274,15 +258,6 @@
 				E552206F1D33253A00DB22CC /* SF-UI-Display-Black.otf */,
 			);
 			name = Font;
-			sourceTree = "<group>";
-		};
-		E5D1747F1D3695BF0019156E /* Request Models */ = {
-			isa = PBXGroup;
-			children = (
-				E5D174801D3695F60019156E /* LDPaginator.swift */,
-				E56D25EB1D35DE1200AEBF9B /* LDResponse.swift */,
-			);
-			name = "Request Models";
 			sourceTree = "<group>";
 		};
 		FD64A87878B61C5EAC4E6FFD /* Pods */ = {
@@ -435,17 +410,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55220411D32BE3600DB22CC /* LDViewController.swift in Sources */,
-				E5D174811D3695F60019156E /* LDPaginator.swift in Sources */,
-				E56D25EC1D35DE1200AEBF9B /* LDResponse.swift in Sources */,
 				E55220471D32CC6300DB22CC /* UIColor+LDAdditions.swift in Sources */,
-				E557DE0A1D3541770097DEC9 /* LDGIF.swift in Sources */,
-				E55220741D33335000DB22CC /* LDSearchBar.swift in Sources */,
+				E54AC64C1D3ABC7B003CD75D /* LDGif.swift in Sources */,
+				E55220741D33335000DB22CC /* LDSearchTextField.swift in Sources */,
 				E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */,
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
+				E54AC6481D3AB98D003CD75D /* LDGifViewModel.swift in Sources */,
 				E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */,
 				E54A7E6C1D3950C10061C98A /* Banner+LDAdditions.swift in Sources */,
-				E557DE081D353F310097DEC9 /* LDMappingProtocol.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
 				E5D174841D369CC20019156E /* LDGIFCell.swift in Sources */,
 				E55220451D32C9E200DB22CC /* LDNavigationBar.swift in Sources */,
@@ -455,7 +428,6 @@
 				E54A7E671D393EEA0061C98A /* LDCircleProgressView.swift in Sources */,
 				E552204A1D32D3FD00DB22CC /* UIView+Positioning.swift in Sources */,
 				E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */,
-				E56D25EE1D36011600AEBF9B /* LDImage.swift in Sources */,
 				E557DDFB1D340A200097DEC9 /* UIView+LDAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
