@@ -12,6 +12,8 @@ class LDViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let activityIndicator = ActivityIndicator()
+    
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
