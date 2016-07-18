@@ -10,11 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 import BRYXBanner
+import RxDataSources
 import CocoaLumberjack
 
 class LDHomeViewController: LDViewController, UITableViewDataSource, UITableViewDelegate  {
     
-    private var arrayGIFs: Array<LDGif> = []
+    private let dataSource = LDHomeViewController.configureDataSource()
+    private let disposeBag = DisposeBag()
     
     @IBOutlet weak private var filterControl: LDFilterControl!
     
@@ -25,98 +27,89 @@ class LDHomeViewController: LDViewController, UITableViewDataSource, UITableView
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.separatorColor  = UIColor.clearColor()
         
-        self.filterControl.didChangeFiltering = { (state: LDFilterControl.LDFiltering) -> Void in
-            
-        }
+//        self.filterControl.didChangeFiltering = { (state: LDFilterControl.LDFiltering) -> Void in
+//            
+//        }
         
-        registerTableViewCell()
+        tableViewSetup()
+        reactiveSetup()
         
-        loadTrendingGIFs()
     }
     
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
+        
     }
     
     override func refreshAction() {
         
         loadTrendingGIFs()
+        
     }
     
     // MARK: - Private Methods
     
-    private func registerTableViewCell() {
+    private func tableViewSetup() {
+        
+        self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.separatorColor  = UIColor.clearColor()
         
         let nibName = UINib(nibName: String(LDGIFCell), bundle:nil)
         
         self.tableView.registerNib(nibName, forCellReuseIdentifier: LDGIFCell.identifier)
-    }
-    
-    private func loadTrendingGIFs() {
         
-//        GiphyProvider.request(.Trend, completion: { (result) in
-//            
-//            switch result {
-//                
-//            case let .Success(response):
-//                
-//                self.refreshControl.endRefreshing()
-//                
-//                if response.statusCode != 200 {
-//                    
-//                    Banner.showErrorBanner()
-//                    
-//                    return
-//                }
-//                
-//                let responseObj = LDResponse(jsonData: JSON(data: response.data))
-//                
-//                self.arrayGIFs = responseObj!.GIFs
-//                
-//                self.tableView.reloadData()
-//                
-//                DDLogInfo("\(JSON(data: response.data))")
-//                
-//            case let .Failure(error):
-//                
-//                self.refreshControl.endRefreshing()
-//                
-//                Banner.showErrorBanner()
-//                
-//                guard let error = error as? CustomStringConvertible else {
-//                    break
-//                }
-//                
-//                DDLogError(error.description)
-//            }
-//            
-//        })
     }
     
-    // MARK: - TableView DataSource Methods
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    private func reactiveSetup() {
         
-        return tableView.dequeueReusableCellWithIdentifier(LDGIFCell.identifier,
-                                                           forIndexPath: indexPath) as UITableViewCell
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let trendingGIFs = RandomUserAPI.sharedAPI
+            .getExampleUserResultSet()
+            .map {
+                
+                return LDTrendingViewModel(gifs: $0)
+                
+            }
+            .observeOn(MainScheduler.instance)
         
-        return self.arrayGIFs.count
-    }
-    
-    // MARK: - TableView Delegate Methods
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        trendingGIFs
+            .map {
+                
+                [SectionModel(model: "", items: $0.users)]
+                
+            }
+            .shareReplay(1)
+            .bindTo(tableView.rx_itemsWithDataSource(dataSource))
+            .addDisposableTo(disposeBag)
         
-        (cell as! LDGIFCell).gif = self.arrayGIFs[indexPath.row]
+        tableView.rx_setDelegate(self)
+            .addDisposableTo(disposeBag)
+        
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        
-//        return self.arrayGIFs[indexPath.row].heightForScreenWidth(self.view.width) + LDGIFCell.separatorHeight
-//    }
+    static private func configureDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, LDGif>> {
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, LDGif>>()
+        
+        dataSource.configureCell = { (_, tv, ip, gif: LDGif) in
+            
+            let cell = tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
+            
+            (cell as! LDGIFCell).gif = gif
+            
+            return cell
+            
+        }
+        
+        return dataSource
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let gif: LDGif = dataSource.itemAtIndexPath(indexPath)
+        
+        return gif.image. + LDGIFCell.separatorHeight
+        
+    }
     
 }

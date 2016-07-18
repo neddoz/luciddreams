@@ -15,7 +15,7 @@ struct LDImage: Mappable {
     let height: String
     
     init(map: Mapper) throws {
-
+            
         try url    = map.from("url")
         try width  = map.from("width")
         try height = map.from("height")
