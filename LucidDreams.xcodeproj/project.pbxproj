@@ -10,9 +10,10 @@
 		06D8F7DBBB83E5E78BAFFD09 /* Pods_LucidDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C4D3DDA79302DE24A029BC /* Pods_LucidDreams.framework */; };
 		E542BACC1D3D4C0C005CD292 /* LDTrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542BACB1D3D4C0C005CD292 /* LDTrendingViewModel.swift */; };
 		E542BACF1D3D58D5005CD292 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542BACE1D3D58D5005CD292 /* ActivityIndicator.swift */; };
+		E542BAD21D3DACD2005CD292 /* LDEmptyTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = E542BAD11D3DACD2005CD292 /* LDEmptyTable.xib */; };
 		E54A7E671D393EEA0061C98A /* LDCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */; };
 		E54A7E6C1D3950C10061C98A /* Banner+LDAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */; };
-		E54AC6481D3AB98D003CD75D /* LDGifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AC6471D3AB98D003CD75D /* LDGifViewModel.swift */; };
+		E54AC6481D3AB98D003CD75D /* LDSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AC6471D3AB98D003CD75D /* LDSearchViewModel.swift */; };
 		E54AC64C1D3ABC7B003CD75D /* LDGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AC64B1D3ABC7B003CD75D /* LDGif.swift */; };
 		E55220201D32BDA800DB22CC /* LDAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */; };
 		E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55220211D32BDA800DB22CC /* LDHomeViewController.swift */; };
@@ -45,9 +46,10 @@
 		81938B191642F3CA42C71B9A /* Pods-LucidDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LucidDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-LucidDreams/Pods-LucidDreams.release.xcconfig"; sourceTree = "<group>"; };
 		E542BACB1D3D4C0C005CD292 /* LDTrendingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDTrendingViewModel.swift; sourceTree = "<group>"; };
 		E542BACE1D3D58D5005CD292 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		E542BAD11D3DACD2005CD292 /* LDEmptyTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDEmptyTable.xib; sourceTree = "<group>"; };
 		E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDCircleProgressView.swift; sourceTree = "<group>"; };
 		E54A7E6B1D3950C10061C98A /* Banner+LDAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Banner+LDAdditions.swift"; sourceTree = "<group>"; };
-		E54AC6471D3AB98D003CD75D /* LDGifViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGifViewModel.swift; sourceTree = "<group>"; };
+		E54AC6471D3AB98D003CD75D /* LDSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSearchViewModel.swift; sourceTree = "<group>"; };
 		E54AC64B1D3ABC7B003CD75D /* LDGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDGif.swift; sourceTree = "<group>"; };
 		E552201C1D32BDA700DB22CC /* Lucid Dreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lucid Dreams.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E552201F1D32BDA800DB22CC /* LDAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDAppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 		E54AC6461D3AB8D9003CD75D /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				E54AC6471D3AB98D003CD75D /* LDGifViewModel.swift */,
+				E54AC6471D3AB98D003CD75D /* LDSearchViewModel.swift */,
 				E542BACB1D3D4C0C005CD292 /* LDTrendingViewModel.swift */,
 			);
 			name = "View Models";
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E54A7E661D393EEA0061C98A /* LDCircleProgressView.swift */,
+				E542BAD11D3DACD2005CD292 /* LDEmptyTable.xib */,
 				E55220771D334CFA00DB22CC /* LDFilterControl.swift */,
 				E55220791D334D8900DB22CC /* LDFilterControl.xib */,
 				E55220441D32C9E200DB22CC /* LDNavigationBar.swift */,
@@ -348,6 +351,7 @@
 				E552202A1D32BDA800DB22CC /* LaunchScreen.storyboard in Resources */,
 				E5D174851D369CC20019156E /* LDGIFCell.xib in Resources */,
 				E55220271D32BDA800DB22CC /* Assets.xcassets in Resources */,
+				E542BAD21D3DACD2005CD292 /* LDEmptyTable.xib in Resources */,
 				E55220251D32BDA800DB22CC /* Main.storyboard in Resources */,
 				E552207A1D334D8900DB22CC /* LDFilterControl.xib in Resources */,
 			);
@@ -430,7 +434,7 @@
 				E557DE011D3445730097DEC9 /* LDGiphyAPI.swift in Sources */,
 				E55220431D32C9BA00DB22CC /* LDNavigationController.swift in Sources */,
 				E55220221D32BDA800DB22CC /* LDHomeViewController.swift in Sources */,
-				E54AC6481D3AB98D003CD75D /* LDGifViewModel.swift in Sources */,
+				E54AC6481D3AB98D003CD75D /* LDSearchViewModel.swift in Sources */,
 				E557DDFD1D3422300097DEC9 /* LDStartupController.swift in Sources */,
 				E54A7E6C1D3950C10061C98A /* Banner+LDAdditions.swift in Sources */,
 				E552204C1D32DA2300DB22CC /* LDSearchViewController.swift in Sources */,
@@ -573,6 +577,7 @@
 				PRODUCT_NAME = "Lucid Dreams";
 				SWIFT_OBJC_BRIDGING_HEADER = "LucidDreams/LucidDreams-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -593,6 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.luciddreams;
 				PRODUCT_NAME = "Lucid Dreams";
 				SWIFT_OBJC_BRIDGING_HEADER = "LucidDreams/LucidDreams-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

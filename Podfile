@@ -11,8 +11,8 @@ target 'LucidDreams' do
   pod 'Moya-ModelMapper/RxSwift'
   pod 'RxOptional'
   pod 'RxDataSources'
-  pod 'RxDelegateCells', '~> 0.1'
   pod 'SDWebImage', '~> 3.8'
   pod 'CircleProgressView', '~> 1.0'
   pod 'BRYXBanner', '~> 0.5'
+  pod 'UITableView-NXEmptyView', '~> 0.1'
 end

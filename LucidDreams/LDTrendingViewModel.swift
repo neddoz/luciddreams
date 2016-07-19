@@ -6,13 +6,13 @@
 //
 //
 
-import Foundation
-import UIKit
 import Moya
+import UIKit
 import RxSwift
 import RxCocoa
-import Moya_ModelMapper
 import RxOptional
+import Foundation
+import Moya_ModelMapper
 
 struct LDTrendingViewModel {
     

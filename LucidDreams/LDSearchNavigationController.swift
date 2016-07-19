@@ -29,8 +29,8 @@ class LDSearchNavigationController: LDNavigationController, UITextFieldDelegate 
         
         let margin: CGFloat = 45.0
         
-        self.searchTextField.frame    = CGRectMake(margin, -2.0, self.navigationBar.width - (margin * 2), 25.0)
-        self.searchTextField.center   = self.navigationBar.center
+        self.searchTextField.frame       = CGRectMake(margin, -2.0, self.navigationBar.width - (margin * 2), 25.0)
+        self.searchTextField.center      = self.navigationBar.center
         
         self.navigationBar.topItem?.titleView = self.searchTextField
     }
