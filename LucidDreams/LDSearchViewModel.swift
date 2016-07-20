@@ -38,33 +38,35 @@ struct LDSearchViewModel {
     private let provider = RxMoyaProvider<Giphy>()
     
     let gifs:        [LDGif]
-    let searchQuery: Driver<String>
+    let searchQuery: Observable<String>
     
     func fetchGifs() -> Observable<[LDGif]> {
         
         return searchQuery
-            .flatMapLatest { query -> Driver<ResultsState> in
+            .flatMapLatest { query -> Observable<[LDGif]> in
                 
-                if query.isEmpty {
-                    
-                    return Driver.just(ResutlsState.empty)
-                    
-                } else {
-                    
-                    return findGifs(query, loadNextPageTrigger: loadNextPageTrigger)
-                        .asDriver(onErrorJustReturn: RepositoriesState.empty)
-                }
+                return self.findGifs(query)
+                
+//                if query.isEmpty {
+//                    
+//                    return Driver.just(ResutlsState.empty)
+//                    
+//                } else {
+//                    
+//                    return findGifs(query, loadNextPageTrigger: loadNextPageTrigger)
+//                        .asDriver(onErrorJustReturn: RepositoriesState.empty)
+//                }
                 
         }
         
     }
     
-    internal func findGifs(query: String) -> Observable<[LDGif]?> {
+    internal func findGifs(query: String) -> Observable<[LDGif]> {
         
         return self.provider
             .request(Giphy.Search(query, 0))
             .debug()
-            .mapArrayOptional(LDGif.self, keyPath: "data")
+            .mapArray(LDGif.self, keyPath: "data")
         
     }
     

@@ -42,9 +42,10 @@ class LDViewController: UIViewController, UITableViewDelegate {
     
     private func tableViewSetup() {
         
-        self.tableView.backgroundColor = UIColor.clearColor()
-        self.tableView.separatorColor  = UIColor.clearColor()
-        self.tableView.nxEV_emptyView  = UINib(nibName: "LDEmptyTable", bundle: nil).instantiateWithOwner(nil, options: nil).first as? UIView
+        self.tableView.backgroundColor     = UIColor.clearColor()
+        self.tableView.separatorColor      = UIColor.clearColor()
+        self.tableView.keyboardDismissMode = .OnDrag
+        self.tableView.nxEV_emptyView      = UINib(nibName: "LDEmptyTable", bundle: nil).instantiateWithOwner(nil, options: nil).first as? UIView
         
         let nibName = UINib(nibName: String(LDGIFCell), bundle:nil)
         
