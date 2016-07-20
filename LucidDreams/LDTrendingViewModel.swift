@@ -62,29 +62,33 @@ class LDTrendingViewModel {
         
         self.disposeBag = DisposeBag()
         
-        let response = self.fetchTrend().take(1).shareReplay(1)
+        let fetch = self.fetchTrend().take(1).shareReplay(1)
         
         let refreshRequest = self.refreshTrigger
             .filter { !$0 }
             .take(1)
-            .map { _ in response }
+            .flatMapLatest { _ in fetch }
         
-        let request = Observable
-            .of(refreshRequest)
-            .merge()
+        refreshRequest
             .take(1)
-            .shareReplay(1)
-        
-        
-        
-        Observable.just(self.elements) { elements in
-            
-            elements
-            
-            }
-            .take(1)
-            .bindTo(elements)
+            .bindTo(self.elements)
             .addDisposableTo(disposeBag)
+        
+        
+        //        let request = Observable
+        //            .of(refreshRequest)
+        //            .merge()
+        //            .take(1)
+        //            .shareReplay(1)
+        //
+        //        Observable.combineLatest(self.elements.asObservable(), request) { elements, response in
+        //
+        //            return elements.flatMapLatest { _ in }
+        //
+        //            }
+        //            .take(1)
+        //            .bindTo(self.elements)
+        //            .addDisposableTo(disposeBag)
         
         //        response
         //            .doOnError { [weak self] _ in
