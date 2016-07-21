@@ -16,10 +16,8 @@ import Moya_ModelMapper
 
 class LDTrendingViewModel {
     
-    typealias LDLoadingType = (Bool, String)
-    
     let refreshTrigger = PublishSubject<Bool>()
-    let fullloading    = Variable<LDLoadingType>((false, "1"))
+    let fullloading    = Variable<Bool>(false)
     let elements       = Variable<[LDGif]>([])
     
     private let provider   = RxMoyaProvider<Giphy>()
@@ -70,14 +68,16 @@ class LDTrendingViewModel {
             .filter { !$0 }
             .take(1)
             .flatMap { _ in fetch.asObservable() }
+            .shareReplay(1)
         
         Observable
             .of(
-                refreshRequest.map { _ in return (false, "1") }
+                refreshRequest.map { _ in (false) },
+                refreshRequest.map { _ in (true) }
             )
             .merge()
-            .bindTo(self.fullloading)
-            .addDisposableTo(self.disposeBag)
+            .bindTo(fullloading)
+            .addDisposableTo(disposeBag)
         
         refreshRequest
             .take(1)
@@ -101,12 +101,7 @@ extension LDTrendingViewModel {
     
     var loading: Driver<Bool> {
         
-        return fullloading
-            .asDriver()
-            .map {
-                $0.0
-            }
-            .distinctUntilChanged()
+        return fullloading.asDriver().map { $0 }.distinctUntilChanged()
         
     }
     

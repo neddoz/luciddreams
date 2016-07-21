@@ -53,7 +53,9 @@ class LDHomeViewController: LDViewController, UITableViewDelegate {
         
         self.viewModel.elements
             .asDriver()
-            .map { [SectionModel(model: "", items: $0)] }
+            .map {
+                [SectionModel(model: "", items: $0)]
+            }
             .drive(self.tableView.rx_itemsWithDataSource(self.dataSource))
             .addDisposableTo(self.disposeBag)
         
