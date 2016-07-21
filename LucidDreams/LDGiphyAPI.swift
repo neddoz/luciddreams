@@ -15,7 +15,7 @@ public enum Giphy {
     
     case Trend
     case Random
-    case Search(String, Int)
+    case Search(String?, Int?)
 }
 
 extension Giphy: TargetType {
@@ -63,7 +63,7 @@ extension Giphy: TargetType {
             return ["api_key": token, "rating": "pg"]
             
         case .Search(let query, let offset):
-            return ["api_key": token, "q": query, "rating": "pg", "offset": offset]
+            return ["api_key": token, "q": query ?? "", "rating": "pg", "offset": offset ?? 0]
         }
     }
     

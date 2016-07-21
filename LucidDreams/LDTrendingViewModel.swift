@@ -20,45 +20,36 @@ class LDTrendingViewModel {
     let fullloading    = Variable<Bool>(false)
     let elements       = Variable<[LDGif]>([])
     
-    private let provider   = RxMoyaProvider<Giphy>()
+    private let provider = RxMoyaProvider<Giphy>()
     
     private var disposeBag      = DisposeBag()
     private var queryDisposeBag = DisposeBag()
     
     init() {
         
-        bindPaginationRequest()
+        bindRequest()
         setupForceRefresh()
-        
-    }
-    
-    private func fetchTrend() -> Observable<[LDGif]> {
-        
-        return self.provider
-            .request(Giphy.Trend)
-            .debug()
-            .mapArray(LDGif.self, keyPath: "data")
         
     }
     
     private func setupForceRefresh() {
         
-        refreshTrigger
+        self.refreshTrigger
             .filter   { $0 }
             .doOnNext { [weak self] _ in
                 
                 guard let mySelf = self else { return }
                 
-                mySelf.bindPaginationRequest()
+                mySelf.bindRequest()
                 
             }
             .map { _ in false }
-            .bindTo(refreshTrigger)
-            .addDisposableTo(queryDisposeBag)
+            .bindTo(self.refreshTrigger)
+            .addDisposableTo(self.queryDisposeBag)
         
     }
     
-    private func bindPaginationRequest() {
+    private func bindRequest() {
         
         self.disposeBag = DisposeBag()
         
@@ -93,6 +84,15 @@ class LDTrendingViewModel {
                 //                        self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
             }
             .addDisposableTo(self.disposeBag)
+    }
+    
+    private func fetchTrend() -> Observable<[LDGif]> {
+        
+        return self.provider
+            .request(Giphy.Trend)
+            .debug()
+            .mapArray(LDGif.self, keyPath: "data")
+        
     }
     
 }

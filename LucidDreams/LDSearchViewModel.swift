@@ -14,59 +14,181 @@ import RxOptional
 import Moya_ModelMapper
 import CocoaLumberjack
 
-enum ServiceState {
+class LDSearchViewModel {
     
-    case Online
-    case Offline
+    typealias LoadingType = (Bool, String)
     
-}
-
-struct ResultsState {
-    
-    let results:       [LDGif]
-    let serviceState:  ServiceState?
-    let limitExceeded: Bool
-    
-    static let empty = ResultsState(results:       [],
-                                    serviceState:  nil,
-                                    limitExceeded: false)
-    
-}
-
-struct LDSearchViewModel {
+    let refreshTrigger      = PublishSubject<Bool>()
+    let loadNextPageTrigger = PublishSubject<Void>()
+    let queryTrigger        = PublishSubject<String>()
+    let fullloading         = Variable<LoadingType>((false, "1"))
+    let elements            = Variable<[LDGif]>([])
     
     private let provider = RxMoyaProvider<Giphy>()
     
-    let gifs:        [LDGif]
-    let searchQuery: Observable<String>
+    private var disposeBag      = DisposeBag()
+    private let queryDisposeBag = DisposeBag()
     
-    func fetchGifs() -> Observable<[LDGif]> {
+    init() {
         
-        return searchQuery
-            .flatMapLatest { query -> Observable<[LDGif]> in
-                
-                return self.findGifs(query)
-                
-//                if query.isEmpty {
-//                    
-//                    return Driver.just(ResutlsState.empty)
-//                    
-//                } else {
-//                    
-//                    return findGifs(query, loadNextPageTrigger: loadNextPageTrigger)
-//                        .asDriver(onErrorJustReturn: RepositoriesState.empty)
-//                }
-                
-        }
+        bindRequest(nil, nextPage: nil)
+        setupForceRefresh()
         
     }
     
-    internal func findGifs(query: String) -> Observable<[LDGif]> {
+    private func setupForceRefresh() {
+        
+        self.queryTrigger
+            .doOnNext { [weak self] queryString in
+                
+                guard let mySelf = self else { return }
+                
+                mySelf.bindRequest(nil, nextPage: queryString)
+                
+            }
+            .map { _ in false }
+            .bindTo(self.refreshTrigger)
+            .addDisposableTo(self.queryDisposeBag)
+        
+        self.refreshTrigger
+            .filter   { $0 }
+            .doOnNext { [weak self] _ in
+                
+                guard let mySelf = self else { return }
+                
+                mySelf.bindRequest(nil, nextPage: nil)
+                
+            }
+            .map { _ in false }
+            .bindTo(self.refreshTrigger)
+            .addDisposableTo(self.queryDisposeBag)
+        
+    }
+    
+    private func bindRequest(query: String?, nextPage: String?) {
+        
+        self.disposeBag = DisposeBag()
+        
+        let fetch = self.searchGIFs(query, nextPage: nextPage)
+            .take(1)
+            .shareReplay(1)
+        
+        let refreshRequest = self.refreshTrigger
+            .filter { !$0 }
+            .take(1)
+            .flatMap { _ in fetch.asObservable() }
+            .shareReplay(1)
+        
+        
+//        let nextPageRequest = loadNextPageTrigger
+//            .take(1)
+//            .flatMap { nextPage.map { Observable.of(paginationRequest.routeWithPage($0)) } ?? Observable.empty() }
+//        
+//        let request = Observable
+//            .of(refreshRequest, nextPageRequest)
+//            .merge()
+//            .take(1)
+//            .shareReplay(1)
+//        
+//        let response = request
+//            .flatMap { $0.rx_collection() }
+//            .shareReplay(1)
+//        
+//        Observable
+//            .of(
+//                request.map { (true, $0.page) },
+//                response.map { (false, $0.page ?? "1") }.catchErrorJustReturn((false, fullloading.value.1))
+//            )
+//            .merge()
+//            .bindTo(fullloading)
+//            .addDisposableTo(disposeBag)
+//        
+//        Observable
+//            .combineLatest(elements.asObservable(), response) { elements, response in
+//                return response.hasPreviousPage ? elements + response.elements : response.elements
+//            }
+//            .take(1)
+//            .bindTo(elements)
+//            .addDisposableTo(disposeBag)
+//        
+//        response
+//            .map { $0.hasNextPage }
+//            .bindTo(hasNextPage)
+//            .addDisposableTo(disposeBag)
+//        
+//        response
+//            .doOnOperaError { [weak self] error throws in
+//                guard let mySelf = self else { return }
+//                Observable.just(error).bindTo(mySelf.errors).addDisposableTo(mySelf.disposeBag)
+//            }
+//            .doOnError { [weak self] _ in
+//                guard let mySelf = self else { return }
+//                mySelf.bindPaginationRequest(mySelf.paginationRequest, nextPage: mySelf.fullloading.value.1) }
+//            .subscribeNext { [weak self] paginationResponse in
+//                self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
+//            }
+//            .addDisposableTo(disposeBag)
+        
+        /*
+        let fetch = self.fetchTrend().take(1).shareReplay(1)
+        
+        let refreshRequest = self.refreshTrigger
+            .filter { !$0 }
+            .take(1)
+            .flatMap { _ in fetch.asObservable() }
+            .shareReplay(1)
+         
+        */
+        
+        Observable
+            .of(
+                refreshRequest.map { _ in (false, "0") },
+                refreshRequest.map { _ in (true,  "0") }
+            )
+            .merge()
+            .bindTo(fullloading)
+            .addDisposableTo(disposeBag)
+        
+        refreshRequest
+            .take(1)
+            .bindTo(self.elements)
+            .addDisposableTo(self.disposeBag)
+        
+        fetch
+            .doOnError { [weak self] _ in
+                //                        guard let mySelf = self else { return }
+                //                        mySelf.bindPaginationRequest(mySelf.paginationRequest, nextPage: mySelf.fullloading.value.1)
+            }
+            .subscribeNext { [weak self] paginationResponse in
+                //                        self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
+            }
+            .addDisposableTo(self.disposeBag)
+        
+        
+    }
+    
+    private func searchGIFs(query: String?, nextPage: String?) -> Observable<[LDGif]> {
         
         return self.provider
             .request(Giphy.Search(query, 0))
             .debug()
             .mapArray(LDGif.self, keyPath: "data")
+        
+    }
+    
+}
+
+extension LDSearchViewModel {
+    
+    var loading: Driver<Bool> {
+        
+        return fullloading.asDriver().map { $0.0 }.distinctUntilChanged()
+        
+    }
+    
+    var firstPageLoading: Driver<Bool> {
+        
+        return fullloading.asDriver().filter { $0.1 == "1" }.map { $0.0 }
         
     }
     

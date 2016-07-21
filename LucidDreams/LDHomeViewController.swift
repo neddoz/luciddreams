@@ -14,13 +14,10 @@ import RxDataSources
 import CocoaLumberjack
 
 class LDHomeViewController: LDViewController, UITableViewDelegate {
-    
-    let viewModel         = LDTrendingViewModel()
-    let activityIndicator = ActivityIndicator()
-    
-    let dataSource = LDHomeViewController.configureDataSource()
-    
-    let refreshControl: UIRefreshControl = UIRefreshControl()
+
+    let refreshControl = UIRefreshControl()
+    let viewModel      = LDTrendingViewModel()
+    let dataSource     = LDHomeViewController.configureDataSource()
     
     @IBOutlet weak private var filterControl: LDFilterControl!
     
@@ -30,7 +27,7 @@ class LDHomeViewController: LDViewController, UITableViewDelegate {
         
         self.refreshControl.tintColor = UIColor.yellowGiphyColor()
         
-        self.tableView.addSubview(refreshControl)
+        self.tableView.addSubview(self.refreshControl)
         
         reactiveSetup()
         
@@ -53,9 +50,7 @@ class LDHomeViewController: LDViewController, UITableViewDelegate {
         
         self.viewModel.elements
             .asDriver()
-            .map {
-                [SectionModel(model: "", items: $0)]
-            }
+            .map { [SectionModel(model: "", items: $0)] }
             .drive(self.tableView.rx_itemsWithDataSource(self.dataSource))
             .addDisposableTo(self.disposeBag)
         
@@ -67,11 +62,7 @@ class LDHomeViewController: LDViewController, UITableViewDelegate {
         
         self.viewModel.loading
             .filter { !$0 && self.refreshControl.refreshing }
-            .driveNext { _ in
-                
-                self.refreshControl.endRefreshing()
-                
-            }
+            .driveNext { _ in self.refreshControl.endRefreshing() }
             .addDisposableTo(self.disposeBag)
         
         self.tableView.rx_setDelegate(self)
