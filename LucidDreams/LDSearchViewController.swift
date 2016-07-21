@@ -40,19 +40,42 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
     
     private func reactiveSetup() {
         
-        searchTextField.rx_text.asObservable()
+        self.searchTextField.rx_text.asObservable()
             .subscribeNext { [weak self] x in self?.searchTextField.text = x.uppercaseString }
-            .addDisposableTo(disposeBag)
+            .addDisposableTo(self.disposeBag)
         
-        rx_sentMessage(#selector(LDHomeViewController.viewWillAppear(_:)))
+        rx_sentMessage(#selector(LDSearchViewController.viewWillAppear(_:)))
+            .skip(1)
             .map { _ in false }
             .bindTo(self.viewModel.refreshTrigger)
             .addDisposableTo(self.disposeBag)
         
-        self.viewModel.elements
+        self.tableView.rx_reachedBottom
+            .bindTo(self.viewModel.loadNextPageTrigger)
+            .addDisposableTo(self.disposeBag)
+        
+        Driver.combineLatest(self.viewModel.elements.asDriver(), self.viewModel.firstPageLoading, self.searchTextField.rx_text.asDriver()) { elements, loading, searchText in
+            
+            return loading || searchText.isEmpty ? [] : elements
+            
+            }
             .asDriver()
             .map { [SectionModel(model: "", items: $0)] }
             .drive(self.tableView.rx_itemsWithDataSource(self.dataSource))
+            .addDisposableTo(self.disposeBag)
+        
+        
+        
+        self.searchTextField.rx_text
+            .filter { !$0.isEmpty }
+            .throttle(0.25, scheduler: MainScheduler.instance)
+            .bindTo(self.viewModel.queryTrigger)
+            .addDisposableTo(self.disposeBag)
+        
+        self.searchTextField.rx_text
+            .filter { $0.isEmpty }
+            .map { _ in return [] }
+            .bindTo(self.viewModel.elements)
             .addDisposableTo(self.disposeBag)
         
         self.refreshControl.rx_controlEvent(.ValueChanged)
@@ -62,11 +85,8 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
             .addDisposableTo(self.disposeBag)
         
         self.viewModel.loading
-            .filter { !$0 && self.refreshControl.refreshing }
+            .filter { !$0  && self.refreshControl.refreshing }
             .driveNext { _ in self.refreshControl.endRefreshing() }
-            .addDisposableTo(self.disposeBag)
-        
-        self.tableView.rx_setDelegate(self)
             .addDisposableTo(self.disposeBag)
         
     }
