@@ -13,11 +13,10 @@ import BRYXBanner
 import RxDataSources
 import UITableView_NXEmptyView
 
-class LDViewController: UIViewController, UITableViewDelegate {
+class LDViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSource = LDViewController.configureDataSource()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -50,37 +49,6 @@ class LDViewController: UIViewController, UITableViewDelegate {
         let nibName = UINib(nibName: String(LDGIFCell), bundle:nil)
         
         self.tableView.registerNib(nibName, forCellReuseIdentifier: LDGIFCell.identifier)
-        
-    }
-    
-    static private func configureDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, LDGif>> {
-        
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, LDGif>>()
-        
-        dataSource.configureCell = { (_, tv, ip, gif: LDGif) in
-            
-            let cell = tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
-            
-            (cell as! LDGIFCell).gif = gif
-            
-            return cell
-            
-        }
-        
-        return dataSource
-    }
-    
-    // MARK: - TableView Delegate Methods
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        let gif: LDGif = dataSource.itemAtIndexPath(indexPath)
-        
-        let gifSize = self.view.width *
-            CGFloat((gif.image.height as NSString).floatValue) /
-            CGFloat((gif.image.width  as NSString).floatValue)
-        
-        return gifSize + LDGIFCell.separatorHeight
         
     }
     

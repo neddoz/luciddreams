@@ -13,14 +13,14 @@ import BRYXBanner
 import RxDataSources
 import CocoaLumberjack
 
-class LDHomeViewController: LDViewController  {
+class LDHomeViewController: LDViewController, UITableViewDelegate {
     
     let viewModel         = LDTrendingViewModel()
     let activityIndicator = ActivityIndicator()
     
-    var gifs:           Observable<[LDGif]?>!
+    let dataSource = LDHomeViewController.configureDataSource()
     
-    var refreshControl: UIRefreshControl = UIRefreshControl()
+    let refreshControl: UIRefreshControl = UIRefreshControl()
     
     @IBOutlet weak private var filterControl: LDFilterControl!
     
@@ -48,72 +48,63 @@ class LDHomeViewController: LDViewController  {
         
         rx_sentMessage(#selector(LDHomeViewController.viewWillAppear(_:)))
             .map { _ in false }
-            .bindTo(viewModel.refreshTrigger)
-            .addDisposableTo(disposeBag)
+            .bindTo(self.viewModel.refreshTrigger)
+            .addDisposableTo(self.disposeBag)
         
-        //        self.viewModel.loading
-        //            .drive(self.activityIndicator.rx_animating)
-        //            .addDisposableTo(disposeBag)
-        
-        self.viewModel.elements.asDriver()
+        self.viewModel.elements
             .asDriver()
-            .drive(self.tableView.rx_itemsWithCellIdentifier(LDGIFCell.identifier, cellType: LDGIFCell.self)) { _, gif, cell in
-                
-                cell.gif = gif
-                
-            }
+            .map { [SectionModel(model: "", items: $0)] }
+            .drive(self.tableView.rx_itemsWithDataSource(self.dataSource))
             .addDisposableTo(self.disposeBag)
         
         self.refreshControl.rx_controlEvent(.ValueChanged)
             .filter { self.refreshControl.refreshing }
             .map { true }
             .bindTo(self.viewModel.refreshTrigger)
-            .addDisposableTo(disposeBag)
+            .addDisposableTo(self.disposeBag)
         
-        viewModel.loading
+        self.viewModel.loading
             .filter { !$0 && self.refreshControl.refreshing }
-            .driveNext { _ in self.refreshControl.endRefreshing() }
-            .addDisposableTo(disposeBag)
+            .driveNext { _ in
+                
+                self.refreshControl.endRefreshing()
+                
+            }
+            .addDisposableTo(self.disposeBag)
         
-        //        self.refreshControl.rx_controlEvent(.ValueChanged)
-        //            .subscribeNext { _ in
-        //
-        //                self.gifs = self.viewModel.fetchTrend()
-        //
-        //                self.refreshControl.endRefreshing()
-        //
-        //            }
-        //            .addDisposableTo(self.disposeBag)
-        //
-        //        self.activityIndicator.asObservable()
-        //            .bindTo(refreshControl.rx_refreshing)
-        //            .addDisposableTo(self.disposeBag)
-        //
-        //        self.gifs = self.viewModel.fetchTrend()
-        //
-        //        self.gifs
-        //            .map {
-        //
-        //                return LDTrendingViewModel(gifs: $0!)
-        //
-        //            }
-        //            .map {
-        //
-        //                [SectionModel(model: "", items: $0.gifs)]
-        //
-        //            }
-        //            .doOnError() { x in
-        //
-        //                Banner.showErrorBanner()
-        //
-        //            }
-        //            .observeOn(MainScheduler.instance)
-        //            .shareReplay(1)
-        //            .bindTo(self.tableView.rx_itemsWithDataSource(self.dataSource))
-        //            .addDisposableTo(self.disposeBag)
+        self.tableView.rx_setDelegate(self)
+            .addDisposableTo(self.disposeBag)
         
-        //        self.tableView.rx_setDelegate(self)
-        //            .addDisposableTo(self.disposeBag)
+    }
+    
+    static private func configureDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, LDGif>> {
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, LDGif>>()
+        
+        dataSource.configureCell = { (_, tv, ip, gif: LDGif) in
+            
+            let cell = tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
+            
+            (cell as! LDGIFCell).gif = gif
+            
+            return cell
+            
+        }
+        
+        return dataSource
+    }
+    
+    // MARK: - TableView Delegate Methods
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let gif: LDGif = dataSource.itemAtIndexPath(indexPath)
+        
+        let gifSize = self.view.width *
+            CGFloat((gif.image.height as NSString).floatValue) /
+            CGFloat((gif.image.width  as NSString).floatValue)
+        
+        return gifSize + LDGIFCell.separatorHeight
         
     }
     

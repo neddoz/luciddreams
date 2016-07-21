@@ -14,7 +14,7 @@ import Foundation
 import RxDataSources
 import UITableView_NXEmptyView
 
-class LDSearchViewController: LDViewController {
+class LDSearchViewController: LDViewController, UITableViewDelegate {
     
     static let startLoadingOffset: CGFloat = 20.0
     

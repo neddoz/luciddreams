@@ -23,7 +23,9 @@ class LDTrendingViewModel {
     let elements       = Variable<[LDGif]>([])
     
     private let provider   = RxMoyaProvider<Giphy>()
-    private var disposeBag = DisposeBag()
+    
+    private var disposeBag      = DisposeBag()
+    private var queryDisposeBag = DisposeBag()
     
     init() {
         
@@ -54,7 +56,7 @@ class LDTrendingViewModel {
             }
             .map { _ in false }
             .bindTo(refreshTrigger)
-            .addDisposableTo(disposeBag)
+            .addDisposableTo(queryDisposeBag)
         
     }
     
@@ -67,37 +69,30 @@ class LDTrendingViewModel {
         let refreshRequest = self.refreshTrigger
             .filter { !$0 }
             .take(1)
-            .flatMapLatest { _ in fetch }
+            .flatMap { _ in fetch.asObservable() }
+        
+        Observable
+            .of(
+                refreshRequest.map { _ in return (false, "1") }
+            )
+            .merge()
+            .bindTo(self.fullloading)
+            .addDisposableTo(self.disposeBag)
         
         refreshRequest
             .take(1)
             .bindTo(self.elements)
-            .addDisposableTo(disposeBag)
+            .addDisposableTo(self.disposeBag)
         
-        
-        //        let request = Observable
-        //            .of(refreshRequest)
-        //            .merge()
-        //            .take(1)
-        //            .shareReplay(1)
-        //
-        //        Observable.combineLatest(self.elements.asObservable(), request) { elements, response in
-        //
-        //            return elements.flatMapLatest { _ in }
-        //
-        //            }
-        //            .take(1)
-        //            .bindTo(self.elements)
-        //            .addDisposableTo(disposeBag)
-        
-        //        response
-        //            .doOnError { [weak self] _ in
-        //                guard let mySelf = self else { return }
-        //                mySelf.bindPaginationRequest(mySelf.paginationRequest, nextPage: mySelf.fullloading.value.1) }
-        //            .subscribeNext { [weak self] paginationResponse in
-        //                self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
-        //            }
-        //            .addDisposableTo(disposeBag)
+        fetch
+            .doOnError { [weak self] _ in
+                //                        guard let mySelf = self else { return }
+                //                        mySelf.bindPaginationRequest(mySelf.paginationRequest, nextPage: mySelf.fullloading.value.1)
+            }
+            .subscribeNext { [weak self] paginationResponse in
+                //                        self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
+            }
+            .addDisposableTo(self.disposeBag)
     }
     
 }
@@ -108,7 +103,9 @@ extension LDTrendingViewModel {
         
         return fullloading
             .asDriver()
-            .map { $0.0 }
+            .map {
+                $0.0
+            }
             .distinctUntilChanged()
         
     }
