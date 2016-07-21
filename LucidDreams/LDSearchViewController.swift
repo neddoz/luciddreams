@@ -65,14 +65,18 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
             .addDisposableTo(self.disposeBag)
         
         self.searchTextField.rx_text
-            .filter { !$0.isEmpty }
+            .filter {
+                !$0.isEmpty
+            }
             .throttle(0.25, scheduler: MainScheduler.instance)
             .bindTo(self.viewModel.queryTrigger)
             .addDisposableTo(self.disposeBag)
         
         self.searchTextField.rx_text
             .filter { $0.isEmpty }
-            .map { _ in return [] }
+            .map {
+                _ in return []
+            }
             .bindTo(self.viewModel.elements)
             .addDisposableTo(self.disposeBag)
         
