@@ -64,8 +64,6 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
             .drive(self.tableView.rx_itemsWithDataSource(self.dataSource))
             .addDisposableTo(self.disposeBag)
         
-        
-        
         self.searchTextField.rx_text
             .filter { !$0.isEmpty }
             .throttle(0.25, scheduler: MainScheduler.instance)
@@ -87,6 +85,9 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
         self.viewModel.loading
             .filter { !$0  && self.refreshControl.refreshing }
             .driveNext { _ in self.refreshControl.endRefreshing() }
+            .addDisposableTo(self.disposeBag)
+        
+        self.tableView.rx_setDelegate(self)
             .addDisposableTo(self.disposeBag)
         
     }

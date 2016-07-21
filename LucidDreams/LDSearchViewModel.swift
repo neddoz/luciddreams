@@ -43,7 +43,7 @@ class LDSearchViewModel {
                 
                 guard let mySelf = self else { return }
                 
-                mySelf.bindRequest(nil, nextPage: queryString)
+                mySelf.bindRequest(queryString, nextPage: nil)
                 
             }
             .map { _ in false }
