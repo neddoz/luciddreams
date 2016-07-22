@@ -4,8 +4,6 @@
 
 Lucid Dreams is a GIF consuming app from Giphy API made in Swift using MVVM and RxSwift.
 
----
-
 ![](https://raw.github.com/pabloepi/luciddreams/master/trending.gif)
 
 ##Features
@@ -37,4 +35,4 @@ You are ready to go, just open the `LucidDreams.xcworkspace` file on your Xcode 
 
 ---
 
-Made with ❤ by Pablo Epíscopo.
+Made with ❤.
