@@ -50,11 +50,11 @@ class LDGIFCell: UITableViewCell {
                     
                     if self.shouldShowTrendTag {
                         
-                        self.circularProgress?.alpha = 0.00
+                        self.trendTag.alpha = CGFloat(self.gif?.isTrending() ?? 0)
                         
                     }
                     
-                    self.trendTag.alpha = CGFloat(self.gif?.isTrending() ?? 0)
+                    self.circularProgress?.alpha = 0.00
                     
                 } else {
                     
