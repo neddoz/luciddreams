@@ -20,6 +20,8 @@ class LDGIFCell: UITableViewCell {
     static let identifier               = String(LDGIFCell)
     static let separatorHeight: CGFloat = 3.0
     
+    var shouldShowTrendTag: Bool = false
+    
     var gif: LDGif? {
         
         didSet {
@@ -46,8 +48,13 @@ class LDGIFCell: UITableViewCell {
                 
                 if (error == nil) {
                     
-                    self.circularProgress?.alpha = 0.00
-                    self.trendTag.alpha          = CGFloat(self.gif?.isTrending() ?? 0)
+                    if self.shouldShowTrendTag {
+                        
+                        self.circularProgress?.alpha = 0.00
+                        
+                    }
+                    
+                    self.trendTag.alpha = CGFloat(self.gif?.isTrending() ?? 0)
                     
                 } else {
                     

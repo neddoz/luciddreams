@@ -121,7 +121,10 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        (cell as! LDGIFCell).gif = dataSource.itemAtIndexPath(indexPath)
+        let customCell = (cell as! LDGIFCell)
+        
+        customCell.gif                = dataSource.itemAtIndexPath(indexPath)
+        customCell.shouldShowTrendTag = true
         
     }
     
