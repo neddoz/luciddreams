@@ -26,12 +26,14 @@ class LDSearchViewModel {
     
     private let provider = RxMoyaProvider<Giphy>()
     
+    private var nativeQuery: String?
+    
     private var disposeBag      = DisposeBag()
     private let queryDisposeBag = DisposeBag()
     
     init() {
         
-        bindRequest(nil, nextPage: nil)
+        bindRequest(nil)
         setupForceRefresh()
         
     }
@@ -43,7 +45,9 @@ class LDSearchViewModel {
                 
                 guard let mySelf = self else { return }
                 
-                mySelf.bindRequest(queryString, nextPage: nil)
+                mySelf.nativeQuery = queryString
+                
+                mySelf.bindRequest(nil)
                 
             }
             .map { _ in false }
@@ -56,7 +60,7 @@ class LDSearchViewModel {
                 
                 guard let mySelf = self else { return }
                 
-                mySelf.bindRequest(nil, nextPage: nil)
+                mySelf.bindRequest(nil)
                 
             }
             .map { _ in false }
@@ -65,11 +69,11 @@ class LDSearchViewModel {
         
     }
     
-    private func bindRequest(query: String?, nextPage: String?) {
+    private func bindRequest(nextPage: String?) {
         
         self.disposeBag = DisposeBag()
         
-        let fetch = self.searchGIFs(query, nextPage: nextPage)
+        let fetch = self.searchGIFs(self.nativeQuery, nextPage: nextPage)
             .take(1)
             .shareReplay(1)
         
