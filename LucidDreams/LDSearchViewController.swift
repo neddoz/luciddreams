@@ -42,11 +42,11 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
         
         self.searchTextField.rx_text.asObservable()
             .subscribeNext { [weak self] x in
-            
+                
                 guard let mySelf = self else { return }
                 
                 mySelf.searchTextField.text = x.uppercaseString
-            
+                
             }
             .addDisposableTo(self.disposeBag)
         
@@ -104,11 +104,7 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
         
         dataSource.configureCell = { (_, tv, ip, gif: LDGif) in
             
-            let cell = tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
-            
-            (cell as! LDGIFCell).gif = gif
-            
-            return cell
+            return tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
             
         }
         
@@ -122,6 +118,12 @@ class LDSearchViewController: LDViewController, UITableViewDelegate {
     }
     
     // MARK: - TableView Delegate Methods
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        (cell as! LDGIFCell).gif = dataSource.itemAtIndexPath(indexPath)
+        
+    }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         

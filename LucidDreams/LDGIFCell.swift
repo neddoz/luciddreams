@@ -23,6 +23,11 @@ class LDGIFCell: UITableViewCell {
         
         didSet {
             
+            let randomColor = randomPlaceholderColor()
+            
+            self.circularProgress.centerFillColor = randomColor
+            self.gifImageView?.backgroundColor    = randomColor
+            
             self.gifImageView.contentMode = .ScaleAspectFill
             
             self.circularProgress.resetCircularProgress()
@@ -51,13 +56,9 @@ class LDGIFCell: UITableViewCell {
         
         super.awakeFromNib()
         
-        let randomColor = randomPlaceholderColor()
-        
-        self.circularProgress.centerFillColor = randomColor
-        self.gifImageView?.backgroundColor    = randomColor
-        self.backgroundColor                  = UIColor.clearColor()
-        self.selectionStyle                   = .None
-        self.trendTag.alpha                   = 0.0
+        self.backgroundColor = UIColor.clearColor()
+        self.selectionStyle  = .None
+        self.trendTag.alpha  = 0.0
         
     }
     
