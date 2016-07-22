@@ -101,7 +101,10 @@ extension LDTrendingViewModel {
     
     var loading: Driver<Bool> {
         
-        return fullloading.asDriver().map { $0 }.distinctUntilChanged()
+        return fullloading
+            .asDriver()
+            .map { $0 }
+            .distinctUntilChanged()
         
     }
     

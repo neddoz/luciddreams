@@ -14,7 +14,6 @@ private let token = "dc6zaTOxFJmzC"
 public enum Giphy {
     
     case Trend
-    case Random
     case Search(String?, Int?)
 }
 
@@ -29,12 +28,10 @@ extension Giphy: TargetType {
         case .Trend:
             return "/gifs/trending"
             
-        case .Random:
-            return "gifs/random"
-            
         case .Search(_, _):
             return "gifs/search"
         }
+        
     }
     
     public var method: Moya.Method {
@@ -44,12 +41,10 @@ extension Giphy: TargetType {
         case .Trend:
             return .GET
             
-        case .Random:
-            return .GET
-            
         case .Search(_, _):
             return .GET
         }
+        
     }
     
     public var parameters: [String: AnyObject]? {
@@ -58,13 +53,12 @@ extension Giphy: TargetType {
             
         case .Trend:
             return ["api_key": token, "limit": 30]
-            
-        case .Random:
-            return ["api_key": token, "rating": "pg"]
+        
             
         case .Search(let query, let offset):
             return ["api_key": token, "q": query ?? "", "rating": "pg", "offset": offset ?? 0]
         }
+        
     }
     
     public var sampleData: NSData {
@@ -74,28 +68,11 @@ extension Giphy: TargetType {
         case .Trend:
             return "}".dataUsingEncoding(NSUTF8StringEncoding)!
             
-        case .Random:
-            return "".dataUsingEncoding(NSUTF8StringEncoding)!
-            
         case .Search(_, _):
             return "".dataUsingEncoding(NSUTF8StringEncoding)!
         }
+        
     }
-
-//    public var multipartBody: [MultipartFormData]? {
-//        
-//        switch self {
-//            
-//        case .Trend:
-//            return nil
-//            
-//        case .Random:
-//            return nil
-//            
-//        case .Search(_, _):
-//            return nil
-//        }
-//    }
     
 }
 

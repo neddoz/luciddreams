@@ -19,8 +19,6 @@ class LDHomeViewController: LDViewController, UITableViewDelegate {
     let viewModel      = LDTrendingViewModel()
     let dataSource     = LDHomeViewController.configureDataSource()
     
-    @IBOutlet weak private var filterControl: LDFilterControl!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()

@@ -82,12 +82,11 @@ class LDSearchViewModel {
             .take(1)
             .flatMap { _ in fetch.asObservable() }
             .shareReplay(1)
-        
-        
-//        let nextPageRequest = loadNextPageTrigger
+//        
+//        let nextPageRequest = self.loadNextPageTrigger
 //            .take(1)
 //            .flatMap { nextPage.map { Observable.of(paginationRequest.routeWithPage($0)) } ?? Observable.empty() }
-//        
+//
 //        let request = Observable
 //            .of(refreshRequest, nextPageRequest)
 //            .merge()
@@ -108,13 +107,15 @@ class LDSearchViewModel {
 //            .addDisposableTo(disposeBag)
 //        
 //        Observable
-//            .combineLatest(elements.asObservable(), response) { elements, response in
+//            .combineLatest(elements.asObservable(), refreshRequest) { elements, response in
+//                
 //                return response.hasPreviousPage ? elements + response.elements : response.elements
+//                
 //            }
 //            .take(1)
 //            .bindTo(elements)
 //            .addDisposableTo(disposeBag)
-//        
+//
 //        response
 //            .map { $0.hasNextPage }
 //            .bindTo(hasNextPage)
@@ -132,17 +133,7 @@ class LDSearchViewModel {
 //                self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
 //            }
 //            .addDisposableTo(disposeBag)
-        
-        /*
-        let fetch = self.fetchTrend().take(1).shareReplay(1)
-        
-        let refreshRequest = self.refreshTrigger
-            .filter { !$0 }
-            .take(1)
-            .flatMap { _ in fetch.asObservable() }
-            .shareReplay(1)
-         
-        */
+
         
         Observable
             .of(
@@ -174,7 +165,7 @@ class LDSearchViewModel {
     private func searchGIFs(query: String?, nextPage: String?) -> Observable<[LDGif]> {
         
         return self.provider
-            .request(Giphy.Search(query, 0))
+            .request(Giphy.Search(query, 1))
             .debug()
             .mapArray(LDGif.self, keyPath: "data")
         
@@ -186,13 +177,18 @@ extension LDSearchViewModel {
     
     var loading: Driver<Bool> {
         
-        return fullloading.asDriver().map { $0.0 }.distinctUntilChanged()
+        return fullloading
+            .asDriver()
+            .map { $0.0 }
+            .distinctUntilChanged()
         
     }
     
     var firstPageLoading: Driver<Bool> {
         
-        return fullloading.asDriver().filter { $0.1 == "1" }.map { $0.0 }
+        return fullloading.asDriver()
+            .filter { $0.1 == "1" }
+            .map { $0.0 }
         
     }
     
