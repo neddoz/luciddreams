@@ -74,18 +74,21 @@ class LDHomeViewController: LDViewController, UITableViewDelegate {
         
         dataSource.configureCell = { (_, tv, ip, gif: LDGif) in
             
-            let cell = tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
-            
-            (cell as! LDGIFCell).gif = gif
-            
-            return cell
+            return tv.dequeueReusableCellWithIdentifier(LDGIFCell.identifier)!
             
         }
         
         return dataSource
+        
     }
     
     // MARK: - TableView Delegate Methods
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        (cell as! LDGIFCell).gif = dataSource.itemAtIndexPath(indexPath)
+        
+    }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         

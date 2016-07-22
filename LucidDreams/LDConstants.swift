@@ -17,12 +17,14 @@ struct LDConstants {
         static let kLDApiVersion  = "v1";
         static let kLDApiPrefix   = "api";
         
-        static let kLDBaseURL     = "\(kLDApiProtocol)://\(kLDApiPrefix).\(kLDApiDomain)/\(kLDApiVersion)"
+        static let kLDBaseURL = "\(kLDApiProtocol)://\(kLDApiPrefix).\(kLDApiDomain)/\(kLDApiVersion)"
+        
     }
     
     struct Fonts {
         
         static let kPrimaryFontBlack = "SFUIDisplay-Black"
+        
     }
     
 }

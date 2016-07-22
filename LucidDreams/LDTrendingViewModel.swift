@@ -11,7 +11,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxOptional
-import Foundation
 import Moya_ModelMapper
 
 class LDTrendingViewModel {

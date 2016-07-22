@@ -30,11 +30,13 @@ class LDViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
         return UIStatusBarStyle.LightContent
+        
     }
     
     // MARK: - Private Methods

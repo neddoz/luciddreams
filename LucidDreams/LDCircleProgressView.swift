@@ -14,6 +14,7 @@ class LDCircleProgressView: CircleProgressView {
     required init(frame: CGRect) {
         
         super.init(frame: frame)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,12 +29,14 @@ class LDCircleProgressView: CircleProgressView {
         self.trackImage           = nil
         self.trackFillColor       = UIColor.whiteColor()
         self.trackBackgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.30)
+        
     }
     
     func resetCircularProgress() {
         
         self.progress = 0.00
         self.alpha    = 1.00
+        
     }
 
 }

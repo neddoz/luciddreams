@@ -16,13 +16,17 @@ class LDNavigationBar: UINavigationBar {
         
         self.barTintColor = UIColor.navigationBarColor()
         self.translucent  = false;
+        
     }
     
     @IBInspectable var inspectableTintColor: UIColor? {
         
         didSet {
+            
             self.tintColor = inspectableTintColor
+            
         }
+        
     }
 
 }

@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import Moya
+import Foundation
 
 public  let kLDLimit = 30
 
@@ -32,6 +32,7 @@ extension Giphy: TargetType {
             
         case .Search(_, _):
             return "gifs/search"
+            
         }
         
     }
@@ -45,6 +46,7 @@ extension Giphy: TargetType {
             
         case .Search(_, _):
             return .GET
+            
         }
         
     }
@@ -55,10 +57,10 @@ extension Giphy: TargetType {
             
         case .Trend:
             return ["api_key": kLDToken, "limit": kLDLimit]
-        
             
         case .Search(let query, let offset):
             return ["api_key": kLDToken, "q": query ?? "", "rating": "pg", "offset": offset]
+            
         }
         
     }
@@ -72,6 +74,7 @@ extension Giphy: TargetType {
             
         case .Search(_, _):
             return "".dataUsingEncoding(NSUTF8StringEncoding)!
+            
         }
         
     }
@@ -85,10 +88,12 @@ private extension String {
     var URLEscapedString: String {
         
         return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+        
     }
     
     var UTF8EncodedData: NSData {
         
         return self.dataUsingEncoding(NSUTF8StringEncoding)!
+        
     }
 }

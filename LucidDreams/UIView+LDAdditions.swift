@@ -18,6 +18,7 @@ extension UIView {
         let nibView = nib.instantiateWithOwner(self, options: nil).first as! UIView
         
         return nibView
+        
     }
     
 }

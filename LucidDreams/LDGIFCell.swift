@@ -44,12 +44,17 @@ class LDGIFCell: UITableViewCell {
                 if (error == nil) {
                     
                     self.circularProgress?.alpha = 0.00
+                    
                 } else {
                     
                     DDLogError(error.description)
+                    
                 }
+                
             }
+            
         }
+        
     }
     
     override func awakeFromNib() {

@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 import RxOptional
 import Moya_ModelMapper
-import CocoaLumberjack
 
 class LDSearchViewModel {
     
@@ -76,8 +75,6 @@ class LDSearchViewModel {
         
         self.nativeNextPage = nextPage
         
-        print(">>>>>>>>> \(self.nativeNextPage)")
-        
         self.disposeBag = DisposeBag()
         
         let fetch = self.searchGIFs(self.nativeQuery, nextPage: self.nativeNextPage)
@@ -135,7 +132,6 @@ class LDSearchViewModel {
                 
             }
             .addDisposableTo(self.disposeBag)
-        
         
     }
     

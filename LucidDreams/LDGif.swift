@@ -33,11 +33,10 @@ struct LDGif: Mappable {
     
     init(map: Mapper) throws {
         
-        try gifId = map.from("id")
-        try slug  = map.from("slug")
-        
         let imageMapper = Mapper(JSON: map.optionalFrom("images.fixed_height")!)
         
+        try gifId = map.from("id")
+        try slug  = map.from("slug")
         try image = LDImage(map: imageMapper)
         
     }

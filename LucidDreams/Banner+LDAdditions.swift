@@ -14,6 +14,7 @@ extension Banner {
     static func showErrorBanner() {
         
         showErrorBanner("Ouch!", subtitle: "Something went wrong.")
+        
     }
     
     static func showErrorBanner(title: String, subtitle: String) {
@@ -26,6 +27,7 @@ extension Banner {
         banner.dismissesOnTap = true
         
         banner.show(duration: 3.0)
+        
     }
     
 }

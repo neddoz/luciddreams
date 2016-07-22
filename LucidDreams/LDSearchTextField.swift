@@ -9,17 +9,19 @@
 import UIKit
 
 class LDSearchTextField: UITextField {
-
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         
         commonInit()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
+        
     }
     
     override func drawRect(rect: CGRect) {
@@ -27,16 +29,19 @@ class LDSearchTextField: UITextField {
         super.drawTextInRect(rect)
         
         self.becomeFirstResponder()
+        
     }
     
-        override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+    override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
         
         if action == #selector(NSObject.copy(_:)) || action == #selector(NSObject.paste(_:)) {
             
             return false;
+            
         }
         
         return super.canPerformAction(action, withSender: sender)
+        
     }
     
     // MARK: - Action Methods
@@ -53,6 +58,7 @@ class LDSearchTextField: UITextField {
         self.textColor                 = UIColor.whiteColor()
         self.keyboardAppearance        = .Dark
         self.returnKeyType             = .Search
+        
     }
     
 }

@@ -9,18 +9,20 @@
 import UIKit
 import Foundation
 
-class LDSearchNavigationController: LDNavigationController, UITextFieldDelegate {
+class LDSearchNavigationController: LDNavigationController {
     
     let searchTextField = LDSearchTextField()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
     }
     
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,10 +31,11 @@ class LDSearchNavigationController: LDNavigationController, UITextFieldDelegate 
         
         let margin: CGFloat = 45.0
         
-        self.searchTextField.frame       = CGRectMake(margin, -2.0, self.navigationBar.width - (margin * 2), 25.0)
-        self.searchTextField.center      = self.navigationBar.center
+        self.searchTextField.frame  = CGRectMake(margin, -2.0, self.navigationBar.width - (margin * 2), 25.0)
+        self.searchTextField.center = self.navigationBar.center
         
         self.navigationBar.topItem?.titleView = self.searchTextField
+        
     }
     
 }

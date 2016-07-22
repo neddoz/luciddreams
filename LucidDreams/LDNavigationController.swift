@@ -15,11 +15,13 @@ class LDNavigationController: UINavigationController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,11 +38,13 @@ class LDNavigationController: UINavigationController {
         logoImage.contentMode = .ScaleAspectFit
         
         self.navigationBar.topItem?.titleView = logoImage
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         
         return UIStatusBarStyle.LightContent
+        
     }
     
     @IBInspectable var separatorColor: UIColor? {
@@ -48,7 +52,9 @@ class LDNavigationController: UINavigationController {
         didSet {
             
             separator.backgroundColor = separatorColor
+            
         }
+        
     }
 
 }
