@@ -80,10 +80,7 @@ class LDTrendingViewModel {
                 //                        guard let mySelf = self else { return }
                 //                        mySelf.bindPaginationRequest(mySelf.paginationRequest, nextPage: mySelf.fullloading.value.1)
             }
-            .subscribeNext { [weak self] paginationResponse in
-                //                        self?.bindPaginationRequest(paginationRequest, nextPage: paginationResponse.nextPage)
-            }
-            .addDisposableTo(self.disposeBag)
+
     }
     
     private func fetchTrend() -> Observable<[LDGif]> {

@@ -9,12 +9,14 @@
 import Foundation
 import Moya
 
-private let token = "dc6zaTOxFJmzC"
+public  let kLDLimit = 30
+
+private let kLDToken = "dc6zaTOxFJmzC"
 
 public enum Giphy {
     
     case Trend
-    case Search(String?, Int?)
+    case Search(String?, Int)
 }
 
 extension Giphy: TargetType {
@@ -52,11 +54,11 @@ extension Giphy: TargetType {
         switch self {
             
         case .Trend:
-            return ["api_key": token, "limit": 30]
+            return ["api_key": kLDToken, "limit": kLDLimit]
         
             
         case .Search(let query, let offset):
-            return ["api_key": token, "q": query ?? "", "rating": "pg", "offset": offset ?? 0]
+            return ["api_key": kLDToken, "q": query ?? "", "rating": "pg", "offset": offset]
         }
         
     }
