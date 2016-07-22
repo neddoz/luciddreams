@@ -6,9 +6,7 @@ Lucid Dreams is a GIF consuming app from Giphy API made in Swift using MVVM and 
 
 ##Demo
 
-![](https://github.com/pabloepi/luciddreams/master/trending-sample.gif)
-
-![](http://im2.ezgif.com/tmp/ezgif-2928581086.gif)
+![](https://raw.github.com/pabloepi/luciddreams/master/trending.gif)
 
 ##Features
 
