@@ -4,6 +4,7 @@ platform :ios, '9.0'
 target 'LucidDreams' do
   use_frameworks!
 
+  pod 'Timepiece', '~> 0.4'
   pod 'Alamofire', '~> 3.4'
   pod 'CocoaLumberjack/Swift'
   pod 'Moya/RxSwift'

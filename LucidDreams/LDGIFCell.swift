@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Foundation
 import CocoaLumberjack
 
 class LDGIFCell: UITableViewCell {
@@ -22,6 +23,8 @@ class LDGIFCell: UITableViewCell {
     var gif: LDGif? {
         
         didSet {
+            
+            self.trendTag.alpha = 0.0
             
             let randomColor = randomPlaceholderColor()
             
@@ -44,6 +47,7 @@ class LDGIFCell: UITableViewCell {
                 if (error == nil) {
                     
                     self.circularProgress?.alpha = 0.00
+                    self.trendTag.alpha          = CGFloat(self.gif?.isTrending() ?? 0)
                     
                 } else {
                     
